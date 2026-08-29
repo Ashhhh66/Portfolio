@@ -317,6 +317,25 @@ dd {
   color: var(--amber);
 }
 
+.channel-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.channel-brand img {
+  width: 28px;
+  height: 28px;
+  flex: none;
+  border-radius: 4px;
+}
+
+.channel-brand > span {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
 .github-link:hover,
 .github-link:focus-visible {
   border-color: var(--green);
