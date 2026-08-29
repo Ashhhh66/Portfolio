@@ -1,4 +1,13 @@
-const engagements = [];
+const engagements = [
+  {
+    opened: "2026-08-29",
+    id: "PS-001",
+    severity: "info",
+    summary: "TCP connect port scanner published",
+    status: "live",
+    href: "https://github.com/Ashhhh66/Port-Scanner",
+  },
+];
 
 const pad = (value) => String(value).padStart(2, "0");
 
@@ -43,6 +52,25 @@ const renderLog = () => {
   }
 
   body.replaceChildren();
+  for (const item of engagements) {
+    const row = document.createElement("tr");
+    const cells = [item.opened, item.id, item.severity, item.summary, item.status];
+    cells.forEach((value, index) => {
+      const cell = document.createElement("td");
+      if (index === 3 && item.href) {
+        const link = document.createElement("a");
+        link.href = item.href;
+        link.rel = "noopener noreferrer";
+        link.target = "_blank";
+        link.textContent = value;
+        cell.append(link);
+      } else {
+        cell.textContent = value;
+      }
+      row.append(cell);
+    });
+    body.append(row);
+  }
 };
 
 tick();

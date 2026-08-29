@@ -298,8 +298,52 @@ dd {
 }
 
 .bio,
+.tools,
 .log {
   grid-column: 1 / -1;
+}
+
+.tool-card {
+  display: grid;
+  gap: 8px;
+  text-decoration: none;
+  color: inherit;
+  padding: 16px;
+  border: 1px solid #3b4d3a;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #142018, #10160f);
+  max-width: 640px;
+}
+
+.tool-card:hover,
+.tool-card:focus-visible {
+  border-color: var(--green);
+  outline: none;
+}
+
+.tool-kicker,
+.tool-url {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.68rem;
+  color: var(--muted);
+}
+
+.tool-card strong {
+  color: var(--amber);
+  font-size: 1.05rem;
+}
+
+.tool-card span {
+  color: var(--muted);
+  line-height: 1.5;
+  font-size: 0.85rem;
+}
+
+.tool-url {
+  color: var(--green);
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 .bio-lead {
