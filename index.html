@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ashh66 // Watch Desk</title>
+    <meta
+      name="description"
+      content="Public cybersecurity watch desk for operator Ashh66. GitHub is the only listed contact. Engagement log is empty."
+    />
+    <meta name="theme-color" content="#07090c" />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="Ashh66 // Watch Desk" />
+    <meta
+      property="og:description"
+      content="Dark-room cybersecurity desk. Handle only. No public engagement records."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <div class="scanlines" aria-hidden="true"></div>
+    <div class="vignette" aria-hidden="true"></div>
+
+    <div class="bezel">
+      <header class="mast">
+        <div class="mast-left">
+          <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
+            <circle cx="16" cy="16" r="13" fill="none" stroke="currentColor" stroke-width="1.4" />
+            <circle cx="16" cy="16" r="7" fill="none" stroke="currentColor" stroke-width="1" opacity="0.7" />
+            <path d="M16 3v6M16 23v6M3 16h6M23 16h6" stroke="currentColor" stroke-width="1.2" />
+            <circle cx="16" cy="16" r="1.8" fill="currentColor" />
+          </svg>
+          <div>
+            <p class="kicker">Station 01 // Public desk</p>
+            <h1>Ashh66 <span>// Watch Desk</span></h1>
+          </div>
+        </div>
+        <dl class="mast-status">
+          <div>
+            <dt>Operator</dt>
+            <dd>Ashh66</dd>
+          </div>
+          <div>
+            <dt>Link</dt>
+            <dd class="live"><span class="led"></span> Online</dd>
+          </div>
+          <div>
+            <dt>London</dt>
+            <dd id="clock-london">--:--:--</dd>
+          </div>
+          <div>
+            <dt>UTC</dt>
+            <dd id="clock-utc">--:--:--</dd>
+          </div>
+        </dl>
+      </header>
+
+      <main class="desk">
+        <section class="panel identity" aria-labelledby="identity-title">
+          <div class="panel-head">
+            <h2 id="identity-title">Operator</h2>
+            <span class="chip">Handle only</span>
+          </div>
+          <dl class="spec">
+            <div>
+              <dt>Callsign</dt>
+              <dd>Ashh66</dd>
+            </div>
+            <div>
+              <dt>Role</dt>
+              <dd>Cybersecurity operator</dd>
+            </div>
+            <div>
+              <dt>Posture</dt>
+              <dd>Defensive / blue-team</dd>
+            </div>
+            <div>
+              <dt>Station</dt>
+              <dd>London</dd>
+            </div>
+            <div>
+              <dt>Clearance shown</dt>
+              <dd>Public</dd>
+            </div>
+            <div>
+              <dt>Legal name</dt>
+              <dd>Not published</dd>
+            </div>
+          </dl>
+          <p class="note">
+            This desk publishes under the handle Ashh66. No real name is listed
+            on this site.
+          </p>
+        </section>
+
+        <section class="panel scope" aria-labelledby="scope-title">
+          <div class="panel-head">
+            <h2 id="scope-title">Watch scope</h2>
+            <span class="chip idle">Idle queue</span>
+          </div>
+          <ul class="scope-grid">
+            <li>
+              <strong>Detection</strong>
+              <span>Signal vs noise, telemetry hygiene, first-pass triage.</span>
+            </li>
+            <li>
+              <strong>Response</strong>
+              <span>Containment paths, evidence handling, handoff notes.</span>
+            </li>
+            <li>
+              <strong>Analysis</strong>
+              <span>Log review, IOC context, timeline reconstruction.</span>
+            </li>
+            <li>
+              <strong>Hardening</strong>
+              <span>Least privilege, exposure reduction, control checks.</span>
+            </li>
+          </ul>
+        </section>
+
+        <section class="panel channels" aria-labelledby="channels-title">
+          <div class="panel-head">
+            <h2 id="channels-title">Channels</h2>
+            <span class="chip">Contact</span>
+          </div>
+          <p class="note tight">
+            GitHub is the only public contact listed. Repositories are not
+            mirrored on this desk.
+          </p>
+          <a
+            class="github-link"
+            href="https://github.com/Ashhhh66"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <span class="github-link-kicker">Outbound // GitHub</span>
+            <span class="github-link-handle">Ashhhh66</span>
+            <span class="github-link-url">github.com/Ashhhh66</span>
+          </a>
+          <ul class="channel-negatives">
+            <li>No repository list</li>
+            <li>No mail drop</li>
+            <li>No social mirrors</li>
+          </ul>
+        </section>
+
+        <section class="panel log" aria-labelledby="log-title">
+          <div class="panel-head">
+            <h2 id="log-title">Engagement log</h2>
+            <span class="chip" id="log-count">0 records</span>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Opened</th>
+                  <th scope="col">ID</th>
+                  <th scope="col">Severity</th>
+                  <th scope="col">Summary</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody id="log-body"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="panel capabilities" aria-labelledby="cap-title">
+          <div class="panel-head">
+            <h2 id="cap-title">Desk capabilities</h2>
+            <span class="chip">Uncertified claims omitted</span>
+          </div>
+          <ul class="caps">
+            <li>Alert triage</li>
+            <li>Log analysis</li>
+            <li>Threat intel lookup</li>
+            <li>Incident notes</li>
+            <li>Network fundamentals</li>
+            <li>OSINT hygiene</li>
+            <li>Identity &amp; access basics</li>
+            <li>Secure ops discipline</li>
+          </ul>
+        </section>
+      </main>
+
+      <footer class="foot">
+        <p>UNCLASSIFIED // PUBLIC WATCH DESK</p>
+        <p>Ashh66 &middot; No real name on record &middot; GitHub contact only</p>
+      </footer>
+    </div>
+
+    <script src="assets/app.js"></script>
+  </body>
+</html>
