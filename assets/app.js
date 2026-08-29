@@ -74,6 +74,7 @@ const renderLog = () => {
         cell.append(link);
       } else {
         cell.textContent = value;
+        if (index === 4) cell.classList.add(`state-${item.status}`);
       }
       row.append(cell);
     });
