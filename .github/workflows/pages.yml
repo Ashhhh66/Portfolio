@@ -28,14 +28,12 @@ jobs:
       - name: Assemble site
         run: |
           mkdir -p _site/assets
-          cp index.html 404.html _site/
+          cp index.html 404.html CNAME _site/
           cp -R assets/. _site/assets/
           touch _site/.nojekyll
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
-        with:
-          enablement: true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
