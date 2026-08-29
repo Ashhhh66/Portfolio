@@ -297,8 +297,17 @@ dd {
   border-bottom: 1px dashed var(--line);
 }
 
+.bio,
 .log {
   grid-column: 1 / -1;
+}
+
+.bio-lead {
+  margin: 0 0 12px;
+  color: var(--text);
+  font-size: 1rem;
+  line-height: 1.65;
+  max-width: 72ch;
 }
 
 .table-wrap {
