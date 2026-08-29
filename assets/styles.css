@@ -308,6 +308,15 @@ dd {
   color: #9db0ff;
 }
 
+.mail-link {
+  border-color: #5a4a2e;
+  background: linear-gradient(180deg, #241c12, #18140e);
+}
+
+.mail-link .github-link-url {
+  color: var(--amber);
+}
+
 .github-link:hover,
 .github-link:focus-visible {
   border-color: var(--green);
