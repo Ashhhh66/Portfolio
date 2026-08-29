@@ -7,7 +7,7 @@ Ashh66 is a London-based cybersecurity operator running a public defensive watch
 - Handle only — no real name
 - Dark watch-desk layout
 - GitHub is the only contact link
-- Public tools listed when ready, starting with Port-Scanner
+- Public tools listed when ready, starting with Port-Scanner and Hash-Checker
 - Engagement log tracks published work
 - Deployed with the GitHub Pages workflow in `.github/workflows/pages.yml`
 

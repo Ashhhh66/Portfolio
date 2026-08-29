@@ -7,6 +7,14 @@ const engagements = [
     status: "live",
     href: "https://github.com/Ashhhh66/Port-Scanner",
   },
+  {
+    opened: "2026-08-29",
+    id: "HC-001",
+    severity: "info",
+    summary: "File hash checker published",
+    status: "live",
+    href: "https://github.com/Ashhhh66/Hash-Checker",
+  },
 ];
 
 const pad = (value) => String(value).padStart(2, "0");

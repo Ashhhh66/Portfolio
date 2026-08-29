@@ -303,6 +303,12 @@ dd {
   grid-column: 1 / -1;
 }
 
+.tool-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
 .tool-card {
   display: grid;
   gap: 8px;
@@ -312,7 +318,6 @@ dd {
   border: 1px solid #3b4d3a;
   border-radius: 10px;
   background: linear-gradient(180deg, #142018, #10160f);
-  max-width: 640px;
 }
 
 .tool-card:hover,
@@ -443,7 +448,8 @@ th {
 @media (max-width: 900px) {
   .desk,
   .mast-status,
-  .scope-grid {
+  .scope-grid,
+  .tool-grid {
     grid-template-columns: 1fr;
   }
 
