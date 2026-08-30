@@ -3,6 +3,7 @@ main = "src/index.js"
 compatibility_date = "2026-08-30"
 
 [vars]
+R2_BUCKET = "66-tool-releases"
 R2_OBJECT = "66-Tool-v1.0.0.zip"
 DOWNLOAD_FILENAME = "66-Tool-v1.0.0.zip"
 FROM_EMAIL = "Ashh66 <Ashh66.dev@gmail.com>"
@@ -10,7 +11,7 @@ SITE_ORIGIN = "https://ashh66.dev"
 
 [[r2_buckets]]
 binding = "TOOL_BUCKET"
-bucket_name = "ashh66-66-tool"
+bucket_name = "66-tool-releases"
 
 [[routes]]
 pattern = "ashh66.dev/66-tool/success*"

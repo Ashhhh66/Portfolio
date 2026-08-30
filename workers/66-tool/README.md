@@ -18,9 +18,20 @@ Server routes for paid 66-Tool downloads. This is not public static HTML and is 
 
 ## Cloudflare
 
-1. Create R2 bucket `ashh66-66-tool`.
-2. Upload the private object `66-Tool-v1.0.0.zip` (not a public bucket).
-   For 1.0.1 either overwrite that object or change `R2_OBJECT` in `wrangler.toml`.
+1. Private R2 bucket `66-tool-releases`, object `66-Tool-v1.0.0.zip`, public access off.
+   For 1.0.1 overwrite that object or change `R2_OBJECT`.
+2. In the host env UI only (never git / never frontend):
+
+```
+STRIPE_SECRET_KEY
+STRIPE_WEBHOOK_SECRET
+RESEND_API_KEY
+R2_ACCESS_KEY_ID
+R2_SECRET_ACCESS_KEY
+R2_ACCOUNT_ID
+R2_S3_ENDPOINT
+```
+
 3. From this folder:
 
 ```bash
@@ -29,6 +40,10 @@ npx wrangler login
 npx wrangler secret put STRIPE_SECRET_KEY
 npx wrangler secret put STRIPE_WEBHOOK_SECRET
 npx wrangler secret put RESEND_API_KEY
+npx wrangler secret put R2_ACCESS_KEY_ID
+npx wrangler secret put R2_SECRET_ACCESS_KEY
+npx wrangler secret put R2_ACCOUNT_ID
+npx wrangler secret put R2_S3_ENDPOINT
 npx wrangler deploy
 ```
 
@@ -37,4 +52,4 @@ npx wrangler deploy
 
 Resend: verify a from-address. Gmail-as-from often fails; a Resend domain on ashh66.dev is more reliable. Override with wrangler var `FROM_EMAIL` if needed.
 
-Never put `sk_live_`, `whsec_`, or Resend keys in git or frontend JS.
+Never put Stripe, Resend, or R2 keys in git or frontend JS. Rotate any key that appeared in chat.

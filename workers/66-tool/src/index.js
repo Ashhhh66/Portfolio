@@ -1,4 +1,5 @@
 import { sendFulfillmentEmail } from "./email.js";
+import { getReleaseObject } from "./r2.js";
 import {
   buyerEmail,
   isCheckoutSessionId,
@@ -53,7 +54,12 @@ async function handleDownload(request, env) {
   }
 
   const objectKey = env.R2_OBJECT || env.DOWNLOAD_OBJECT || "66-Tool-v1.0.0.zip";
-  const object = await env.TOOL_BUCKET.get(objectKey);
+  let object;
+  try {
+    object = await getReleaseObject(env, objectKey);
+  } catch {
+    return htmlPage("File not available", "Paid, but the file is not in storage yet.");
+  }
   if (!object) {
     return htmlPage("File not available", "Paid, but the file is not in storage yet.");
   }
