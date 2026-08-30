@@ -1,0 +1,4 @@
+# Copy to .dev.vars locally. Never commit real keys.
+STRIPE_SECRET_KEY=
+STRIPE_WEBHOOK_SECRET=
+RESEND_API_KEY=

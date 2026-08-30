@@ -1,0 +1,21 @@
+name = "ashh66-66-tool"
+main = "src/index.js"
+compatibility_date = "2026-08-30"
+
+[vars]
+DOWNLOAD_OBJECT = "66-Tool-win.zip"
+DOWNLOAD_FILENAME = "66-Tool-win.zip"
+FROM_EMAIL = "Ashh66 <Ashh66.dev@gmail.com>"
+SITE_ORIGIN = "https://ashh66.dev"
+
+[[r2_buckets]]
+binding = "TOOL_BUCKET"
+bucket_name = "ashh66-66-tool"
+
+[[routes]]
+pattern = "ashh66.dev/66-tool/success*"
+zone_name = "ashh66.dev"
+
+[[routes]]
+pattern = "ashh66.dev/api/stripe/webhook*"
+zone_name = "ashh66.dev"
