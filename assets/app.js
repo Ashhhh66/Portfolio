@@ -15,6 +15,14 @@ const engagements = [
     status: "live",
     href: "https://github.com/Ashhhh66/Hash-Checker",
   },
+  {
+    opened: "2026-08-30",
+    id: "66-001",
+    severity: "info",
+    summary: "66-Tool paid privacy hygiene panel listed",
+    status: "live",
+    href: "#product-66-tool",
+  },
 ];
 
 const pad = (value) => String(value).padStart(2, "0");
@@ -68,9 +76,11 @@ const renderLog = () => {
       if (index === 3 && item.href) {
         const link = document.createElement("a");
         link.href = item.href;
-        link.rel = "noopener noreferrer";
-        link.target = "_blank";
         link.textContent = value;
+        if (item.href.startsWith("http")) {
+          link.rel = "noopener noreferrer";
+          link.target = "_blank";
+        }
         cell.append(link);
       } else {
         cell.textContent = value;
