@@ -50,6 +50,6 @@ npx wrangler deploy
 4. Confirm Worker routes on `ashh66.dev` for `/66-tool/success*` and `/api/stripe/webhook*`.
 5. If the apex is still grey-cloud to GitHub Pages only, those paths 404 until the Worker route is attached to the zone.
 
-Resend: verify a from-address. Gmail-as-from often fails; a Resend domain on ashh66.dev is more reliable. Override with wrangler var `FROM_EMAIL` if needed.
+Resend from-address: `66-tool@ashh66.dev` (domain ashh66.dev verified).
 
 Never put Stripe, Resend, or R2 keys in git or frontend JS. Rotate any key that appeared in chat.

@@ -32,7 +32,7 @@ export async function sendFulfillmentEmail(env, to, sessionId) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from: env.FROM_EMAIL || "Ashh66 <Ashh66.dev@gmail.com>",
+      from: env.FROM_EMAIL || "Ashh66 <66-tool@ashh66.dev>",
       to: [to],
       subject: "66-Tool download",
       text: fulfillmentText(link),
