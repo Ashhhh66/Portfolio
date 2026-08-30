@@ -1,4 +1,4 @@
-name = "ashh66-66-tool"
+name = "66-tool-download"
 main = "src/index.js"
 compatibility_date = "2026-08-30"
 
@@ -6,7 +6,8 @@ compatibility_date = "2026-08-30"
 R2_BUCKET = "66-tool-releases"
 R2_OBJECT = "66-Tool-v1.0.0.zip"
 DOWNLOAD_FILENAME = "66-Tool-v1.0.0.zip"
-FROM_EMAIL = "Ashh66 <Ashh66.dev@gmail.com>"
+FROM_EMAIL = "Ashh66 <66-tool@ashh66.dev>"
+REPLY_TO = "Ashh66.dev@gmail.com"
 SITE_ORIGIN = "https://ashh66.dev"
 
 [[r2_buckets]]

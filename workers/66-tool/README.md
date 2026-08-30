@@ -1,55 +1,56 @@
 # 66-Tool fulfillment worker
 
-Server routes for paid 66-Tool downloads. This is not public static HTML and is not shipped with GitHub Pages.
+Worker name on Cloudflare: **66-tool-download**
 
-## Live URLs (after deploy + DNS routes)
+This session cannot log into your Cloudflare account, so Hello World must be replaced in the dashboard (or `wrangler deploy` on a machine already logged into that account).
 
-- Download: `https://ashh66.dev/66-tool/success?session_id={CHECKOUT_SESSION_ID}`
-- **Stripe webhook (paste this into Stripe):** `https://ashh66.dev/api/stripe/webhook`
+## Overlay Hello World
 
-## Stripe Dashboard
+1. Cloudflare → Workers & Pages → **66-tool-download** → **Edit code**
+2. Delete the Hello World file
+3. Paste `dashboard-worker.js` from this folder
+4. **Save and deploy**
 
-1. Payment Link → After payment → redirect to  
-   `https://ashh66.dev/66-tool/success?session_id={CHECKOUT_SESSION_ID}`
-2. Developers → Webhooks → Add endpoint  
-   URL: `https://ashh66.dev/api/stripe/webhook`  
-   Event: `checkout.session.completed`  
-   Copy the signing secret into `STRIPE_WEBHOOK_SECRET`.
+Secrets stay in **Settings → Variables and secrets**. Do not put keys in the script.
 
-## Cloudflare
+## Routes (only after ashh66.dev is on THIS Cloudflare account)
 
-1. Private R2 bucket `66-tool-releases`, object `66-Tool-v1.0.0.zip`, public access off.
-   For 1.0.1 overwrite that object or change `R2_OBJECT`.
-2. In the host env UI only (never git / never frontend):
+1. Workers & Pages → **66-tool-download** → **Settings** → **Domains & Routes** → **Add** → **Route**
+2. Add exactly:
+   - `ashh66.dev/66-tool/success*`
+   - `ashh66.dev/api/stripe/webhook*`
+3. Zone: `ashh66.dev`
 
-```
-STRIPE_SECRET_KEY
-STRIPE_WEBHOOK_SECRET
-RESEND_API_KEY
-R2_ACCESS_KEY_ID
-R2_SECRET_ACCESS_KEY
-R2_ACCOUNT_ID
-R2_S3_ENDPOINT
-```
+If **ashh66.dev is not a zone on this account**:
 
-3. From this folder:
+1. Cloudflare home → **Add a domain** → `ashh66.dev`  
+   or **Workers & Pages → 66-tool-download → Settings → Domains & Routes → Custom domain** and add `ashh66.dev` if offered.
+2. If you add the zone, point nameservers as Cloudflare shows, then in **DNS**:
+   - Keep the four GitHub Pages **A** records for `@` (`185.199.108.153`–`185.199.111.153`)
+   - Turn **Proxy status** to **Proxied** (orange cloud) for `@`
+   - `www` CNAME to `ashhhh66.github.io` — also **Proxied**
+3. Then add the two Worker routes above.
 
-```bash
-npm install
-npx wrangler login
-npx wrangler secret put STRIPE_SECRET_KEY
-npx wrangler secret put STRIPE_WEBHOOK_SECRET
-npx wrangler secret put RESEND_API_KEY
-npx wrangler secret put R2_ACCESS_KEY_ID
-npx wrangler secret put R2_SECRET_ACCESS_KEY
-npx wrangler secret put R2_ACCOUNT_ID
-npx wrangler secret put R2_S3_ENDPOINT
-npx wrangler deploy
-```
+Grey cloud (DNS only) sends browsers straight to GitHub. The Worker never sees `/66-tool/success` until orange cloud is on.
 
-4. Confirm Worker routes on `ashh66.dev` for `/66-tool/success*` and `/api/stripe/webhook*`.
-5. If the apex is still grey-cloud to GitHub Pages only, those paths 404 until the Worker route is attached to the zone.
+## Stripe (do this after routes exist and a test hits the Worker)
 
-Resend from-address: `66-tool@ashh66.dev` (domain ashh66.dev verified).
+**Webhook**
 
-Never put Stripe, Resend, or R2 keys in git or frontend JS. Rotate any key that appeared in chat.
+- URL: `https://ashh66.dev/api/stripe/webhook`
+- Event: `checkout.session.completed`
+- Then paste the signing secret into Worker secret `STRIPE_WEBHOOK_SECRET`
+
+**Payment Link after-payment redirect**
+
+`https://ashh66.dev/66-tool/success?session_id={CHECKOUT_SESSION_ID}`
+
+Live Buy button stays:
+
+`https://buy.stripe.com/fZu3cw2eh6CVgtu74scAo00`
+
+A **test** `STRIPE_SECRET_KEY` cannot retrieve a **live** Checkout Session. Live buys will show Payment not found until you switch that secret to live.
+
+## Resend
+
+`ashh66.dev` must be **Verified**, not Pending, before `66-tool@ashh66.dev` will send. From: `Ashh66 <66-tool@ashh66.dev>`. Reply-To: `Ashh66.dev@gmail.com`.

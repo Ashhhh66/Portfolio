@@ -34,6 +34,7 @@ export async function sendFulfillmentEmail(env, to, sessionId) {
     body: JSON.stringify({
       from: env.FROM_EMAIL || "Ashh66 <66-tool@ashh66.dev>",
       to: [to],
+      reply_to: env.REPLY_TO || "Ashh66.dev@gmail.com",
       subject: "66-Tool download",
       text: fulfillmentText(link),
     }),
