@@ -12,3 +12,5 @@ Ashh66 is a London-based cybersecurity operator running a public defensive watch
 - Deployed with the GitHub Pages workflow in `.github/workflows/pages.yml`
 
 Live site: [ashh66.dev](https://ashh66.dev/) (GitHub Pages, custom domain).
+
+Site source: `index.html`, `404.html`, and `assets/`.
