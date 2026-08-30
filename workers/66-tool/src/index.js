@@ -52,13 +52,13 @@ async function handleDownload(request, env) {
     return paymentNotFound();
   }
 
-  const objectKey = env.DOWNLOAD_OBJECT || "66-Tool-win.zip";
+  const objectKey = env.R2_OBJECT || env.DOWNLOAD_OBJECT || "66-Tool-v1.0.0.zip";
   const object = await env.TOOL_BUCKET.get(objectKey);
   if (!object) {
     return htmlPage("File not available", "Paid, but the file is not in storage yet.");
   }
 
-  const filename = env.DOWNLOAD_FILENAME || "66-Tool-win.zip";
+  const filename = env.DOWNLOAD_FILENAME || objectKey || "66-Tool-v1.0.0.zip";
   const headers = new Headers();
   headers.set("Content-Type", "application/zip");
   headers.set("Content-Disposition", `attachment; filename="${filename}"`);

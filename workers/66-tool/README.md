@@ -19,7 +19,8 @@ Server routes for paid 66-Tool downloads. This is not public static HTML and is 
 ## Cloudflare
 
 1. Create R2 bucket `ashh66-66-tool`.
-2. Upload the private object `66-Tool-win.zip` (not a public bucket).
+2. Upload the private object `66-Tool-v1.0.0.zip` (not a public bucket).
+   For 1.0.1 either overwrite that object or change `R2_OBJECT` in `wrangler.toml`.
 3. From this folder:
 
 ```bash
