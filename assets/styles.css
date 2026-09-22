@@ -99,10 +99,13 @@ code {
   letter-spacing: -0.03em;
 }
 
-.brand img {
-  width: 32px;
+.brand img,
+.brand-mark {
   height: 32px;
-  border-radius: 8px;
+  width: auto;
+  max-width: 168px;
+  object-fit: contain;
+  display: block;
 }
 
 .nav {
