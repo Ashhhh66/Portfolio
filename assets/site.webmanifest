@@ -1,0 +1,20 @@
+{
+  "name": "Ashh66",
+  "short_name": "Ashh66",
+  "icons": [
+    {
+      "src": "/assets/logo.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#07090c",
+  "background_color": "#07090c",
+  "display": "browser",
+  "start_url": "/"
+}
