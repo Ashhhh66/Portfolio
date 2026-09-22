@@ -1,154 +1,51 @@
-const engagements = [
-  {
-    opened: "2026-08-29",
-    id: "PS-001",
-    severity: "info",
-    summary: "TCP connect port scanner published",
-    status: "live",
-    href: "https://github.com/Ashhhh66/Port-Scanner",
-  },
-  {
-    opened: "2026-08-29",
-    id: "HC-001",
-    severity: "info",
-    summary: "File hash checker published",
-    status: "live",
-    href: "https://github.com/Ashhhh66/Hash-Checker",
-  },
-  {
-    opened: "2026-08-30",
-    id: "66-001",
-    severity: "info",
-    summary: "66-Tool paid privacy hygiene panel listed",
-    status: "live",
-    href: "66-tool/",
-  },
-];
-
 const capabilities = [
-  { label: "Alert triage", href: "" }, // TODO: evidence — writeup, ticket sample, or profile
-  { label: "Log analysis", href: "" }, // TODO: evidence — log-review note or repo
-  { label: "Threat intel lookup", href: "" }, // TODO: evidence — lookup notes or tool
-  { label: "Incident notes", href: "" }, // TODO: evidence — redacted note or template
+  { label: "Alert triage", href: "" }, // TODO: evidence
+  { label: "Log analysis", href: "" }, // TODO: evidence
+  { label: "Threat intel lookup", href: "" }, // TODO: evidence
+  { label: "Incident notes", href: "" }, // TODO: evidence
   { label: "TCP connect scanning", href: "https://github.com/Ashhhh66/Port-Scanner" },
-  { label: "Network fundamentals", href: "" }, // TODO: evidence — lab notes or cert/profile
+  { label: "Network fundamentals", href: "" }, // TODO: evidence
   { label: "File hashing", href: "https://github.com/Ashhhh66/Hash-Checker" },
   { label: "Python tooling", href: "https://github.com/Ashhhh66" },
-  { label: "OSINT hygiene", href: "" }, // TODO: evidence — writeup or repo
-  { label: "Identity & access basics", href: "" }, // TODO: evidence — writeup or lab
+  { label: "OSINT hygiene", href: "" }, // TODO: evidence
+  { label: "Identity & access basics", href: "" }, // TODO: evidence
   { label: "Privacy hygiene", href: "66-tool/" },
-  { label: "Secure ops discipline", href: "" }, // TODO: evidence — checklist or note
+  { label: "Secure ops discipline", href: "" }, // TODO: evidence
 ];
 
 const tools = [
   {
-    kicker: "PS-001 // Python",
+    kicker: "Python",
     name: "Port Scanner",
     blurb:
-      "TCP connect scanner for authorized hosts. Concurrent probes, common port presets, optional banners, JSON output. No raw sockets.",
+      "TCP connect scanner for authorized hosts. Concurrent probes, common-port presets, optional banners, JSON. No raw sockets.",
     href: "https://github.com/Ashhhh66/Port-Scanner",
     repoLabel: "github.com/Ashhhh66/Port-Scanner",
-    writeup: "", // TODO: blog / walkthrough / case study URL
+    writeup: "", // TODO: blog / walkthrough URL
     writeupLabel: "Notes",
   },
   {
-    kicker: "HC-001 // Python",
+    kicker: "Python",
     name: "Hash Checker",
     blurb:
-      "File and text digests for integrity checks. SHA-256 by default, optional known-hash compare, JSON output. Local files only.",
+      "File and text digests for integrity checks. SHA-256 by default, optional known-hash compare, JSON. Local files only.",
     href: "https://github.com/Ashhhh66/Hash-Checker",
     repoLabel: "github.com/Ashhhh66/Hash-Checker",
-    writeup: "", // TODO: blog / walkthrough / case study URL
+    writeup: "", // TODO: blog / walkthrough URL
     writeupLabel: "Notes",
   },
 ];
 
 const productExtras = {
-  // TODO: path or URL to a short demo GIF / video. Empty = hidden.
+  // TODO: demo GIF / video URL. Empty = hidden.
   demoSrc: "",
-  // "gif" | "video" | "youtube"
   demoType: "gif",
   demoAlt: "66-Tool demo",
-  // TODO: one-line support / refund policy. Empty = hidden.
+  // TODO: support / refund line. Empty = hidden.
   supportPolicy: "",
-  // TODO: changelog / version-history URL. Empty = hidden.
+  // TODO: changelog URL. Empty = hidden.
   changelogHref: "",
   changelogLabel: "Version history",
-};
-
-const pad = (value) => String(value).padStart(2, "0");
-
-const formatClock = (date, timeZone) => {
-  const parts = new Intl.DateTimeFormat("en-GB", {
-    timeZone,
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-    hour12: false,
-  }).formatToParts(date);
-
-  const lookup = Object.fromEntries(parts.map((part) => [part.type, part.value]));
-  return `${pad(lookup.hour)}:${pad(lookup.minute)}:${pad(lookup.second)}`;
-};
-
-const setTextIfChanged = (node, value) => {
-  if (node && node.textContent !== value) node.textContent = value;
-};
-
-const tick = () => {
-  const now = new Date();
-  setTextIfChanged(document.getElementById("clock-london"), formatClock(now, "Europe/London"));
-  setTextIfChanged(document.getElementById("clock-utc"), formatClock(now, "UTC"));
-};
-
-const scheduleTick = () => {
-  tick();
-  const delay = 1000 - (Date.now() % 1000);
-  window.setTimeout(scheduleTick, delay);
-};
-
-const renderLog = () => {
-  const body = document.getElementById("log-body");
-  const count = document.getElementById("log-count");
-  if (!body || !count) return;
-
-  count.textContent = `${engagements.length} record${engagements.length === 1 ? "" : "s"}`;
-
-  if (!engagements.length) {
-    body.innerHTML = `
-      <tr>
-        <td class="empty" colspan="5">
-          <strong>Queue clear</strong>
-          No engagements logged. This desk is live, but the ticket file is empty.
-        </td>
-      </tr>
-    `;
-    return;
-  }
-
-  body.replaceChildren();
-  for (const item of engagements) {
-    const row = document.createElement("tr");
-    const cells = [item.opened, item.id, item.severity, item.summary, item.status];
-    cells.forEach((value, index) => {
-      const cell = document.createElement("td");
-      if (index === 3 && item.href) {
-        const link = document.createElement("a");
-        link.href = item.href;
-        link.textContent = value;
-        if (item.href.startsWith("http")) {
-          link.rel = "noopener noreferrer";
-          link.target = "_blank";
-        }
-        cell.append(link);
-      } else {
-        cell.textContent = value;
-        if (index === 4) cell.classList.add(`state-${item.status}`);
-      }
-      row.append(cell);
-    });
-    body.append(row);
-  }
 };
 
 const renderCapabilities = () => {
@@ -174,28 +71,28 @@ const renderCapabilities = () => {
 };
 
 const renderTools = () => {
-  const grid = document.getElementById("tool-grid");
+  const grid = document.getElementById("work-grid");
   if (!grid) return;
   grid.replaceChildren();
   for (const tool of tools) {
     const card = document.createElement("article");
-    card.className = "tool-card";
+    card.className = "work-card card";
 
     const kicker = document.createElement("span");
-    kicker.className = "tool-kicker";
+    kicker.className = "kicker";
     kicker.textContent = tool.kicker;
 
     const name = document.createElement("strong");
     name.textContent = tool.name;
 
-    const blurb = document.createElement("span");
+    const blurb = document.createElement("p");
     blurb.textContent = tool.blurb;
 
     const links = document.createElement("span");
-    links.className = "tool-links";
+    links.className = "work-links";
 
     const repo = document.createElement("a");
-    repo.className = "tool-url";
+    repo.className = "fine";
     repo.href = tool.href;
     repo.textContent = tool.repoLabel;
     if (tool.href.startsWith("http")) {
@@ -206,7 +103,7 @@ const renderTools = () => {
 
     if (tool.writeup) {
       const notes = document.createElement("a");
-      notes.className = "tool-url";
+      notes.className = "fine";
       notes.href = tool.writeup;
       notes.textContent = tool.writeupLabel || "Notes";
       if (tool.writeup.startsWith("http")) {
@@ -267,8 +164,6 @@ const renderProductExtras = () => {
   }
 };
 
-scheduleTick();
-renderLog();
 renderCapabilities();
 renderTools();
 renderProductExtras();
