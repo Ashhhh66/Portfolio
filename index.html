@@ -6,45 +6,49 @@
     <title>Ashh66 // Watch Desk</title>
     <meta
       name="description"
-      content="Ashh66 is a London-based cybersecurity operator. Public defensive watch desk. Handle only. GitHub is the contact channel."
+      content="Ashh66 is a London-based cybersecurity operator. Public defensive watch desk. 66-Tool is the paid Windows privacy panel. Handle only."
     />
     <meta name="theme-color" content="#07090c" />
     <meta name="robots" content="index,follow" />
     <meta property="og:title" content="Ashh66 // Watch Desk" />
     <meta
       property="og:description"
-      content="Ashh66 is a London-based cybersecurity operator running a public defensive watch desk. Handle only. GitHub is the contact channel."
+      content="London defensive watch desk. Public tools plus 66-Tool, a $25 Windows privacy hygiene panel."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://ashh66.dev/" />
+    <meta property="og:image" content="https://ashh66.dev/assets/ashh66-mark.png" />
+    <meta name="twitter:card" content="summary" />
     <link rel="canonical" href="https://ashh66.dev/" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="assets/ashh66-mark.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="assets/styles.css?v=8" />
+    <link rel="stylesheet" href="assets/styles.css?v=9" />
   </head>
   <body>
+    <a class="skip" href="#product-66-tool">Skip to 66-Tool</a>
     <div class="scanlines" aria-hidden="true"></div>
     <div class="vignette" aria-hidden="true"></div>
 
     <div class="bezel">
       <header class="mast">
         <div class="mast-left">
-          <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
-            <circle cx="16" cy="16" r="13" fill="none" stroke="currentColor" stroke-width="1.4" />
-            <circle cx="16" cy="16" r="7" fill="none" stroke="currentColor" stroke-width="1" opacity="0.7" />
-            <path d="M16 3v6M16 23v6M3 16h6M23 16h6" stroke="currentColor" stroke-width="1.2" />
-            <circle cx="16" cy="16" r="1.8" fill="currentColor" />
-          </svg>
+          <img class="mark-img" src="assets/ashh66-mark.png" width="40" height="40" alt="" />
           <div>
             <p class="kicker">Station 01 // Public desk</p>
             <h1>Ashh66 <span>// Watch Desk</span></h1>
           </div>
         </div>
+        <nav class="mast-nav" aria-label="Desk">
+          <a href="#product-66-tool">66-Tool</a>
+          <a href="#tools">Tools</a>
+          <a href="#channels">Contact</a>
+        </nav>
         <dl class="mast-status">
           <div>
             <dt>Operator</dt>
@@ -66,6 +70,44 @@
       </header>
 
       <main class="desk">
+        <section class="panel featured" id="product-66-tool" aria-labelledby="featured-title">
+          <div class="featured-copy">
+            <div class="panel-head">
+              <h2 id="featured-title">Paid tool</h2>
+              <span class="chip idle">66-001 // Live</span>
+            </div>
+            <p class="featured-title">66-Tool</p>
+            <p class="featured-lead">
+              Personal privacy hygiene for your Windows PC. Scrub JPEG, PNG, PDF,
+              and MP4 metadata, shred your own files, check your own leaks, and
+              inspect one URL. CMD menu. Not an exploit kit.
+            </p>
+            <div class="featured-actions">
+              <p class="price-lock">
+                $25 USD
+                <small>One-time · personal license</small>
+              </p>
+              <a
+                class="buy-btn"
+                href="https://buy.stripe.com/fZu3cw2eh6CVgtu74scAo00"
+                rel="noopener noreferrer"
+                target="_blank"
+                >Buy 66-Tool</a
+              >
+              <a class="ghost-btn" href="66-tool/">What's included</a>
+            </div>
+          </div>
+          <div class="term" aria-hidden="true">
+            <div class="term-bar"><span>66-TOOL v1.0.0</span><span>CMD</span></div>
+            <ol>
+              <li>Scrub JPEG / PNG / PDF / MP4 metadata</li>
+              <li>Shred your own files</li>
+              <li>Check your own leaks</li>
+              <li>Inspect one URL</li>
+            </ol>
+          </div>
+        </section>
+
         <section class="panel bio" aria-labelledby="bio-title">
           <div class="panel-head">
             <h2 id="bio-title">Bio</h2>
@@ -119,32 +161,7 @@
           </p>
         </section>
 
-        <section class="panel scope" aria-labelledby="scope-title">
-          <div class="panel-head">
-            <h2 id="scope-title">Watch scope</h2>
-            <span class="chip idle">2 public / 1 paid</span>
-          </div>
-          <ul class="scope-grid">
-            <li>
-              <strong>Detection</strong>
-              <span>Signal vs noise, telemetry hygiene, first-pass triage.</span>
-            </li>
-            <li>
-              <strong>Response</strong>
-              <span>Containment paths, evidence handling, handoff notes.</span>
-            </li>
-            <li>
-              <strong>Analysis</strong>
-              <span>Log review, IOC context, timeline reconstruction.</span>
-            </li>
-            <li>
-              <strong>Hardening</strong>
-              <span>Least privilege, exposure reduction, control checks.</span>
-            </li>
-          </ul>
-        </section>
-
-        <section class="panel channels" aria-labelledby="channels-title">
+        <section class="panel channels" id="channels" aria-labelledby="channels-title">
           <div class="panel-head">
             <h2 id="channels-title">Channels</h2>
             <span class="chip">Contact</span>
@@ -187,76 +204,66 @@
           </ul>
         </section>
 
-        <section class="panel tools" aria-labelledby="tools-title">
+        <section class="panel scope" aria-labelledby="scope-title">
+          <div class="panel-head">
+            <h2 id="scope-title">Watch scope</h2>
+            <span class="chip idle">2 public / 1 paid</span>
+          </div>
+          <ul class="scope-grid">
+            <li>
+              <strong>Detection</strong>
+              <span>Signal vs noise, telemetry hygiene, first-pass triage.</span>
+            </li>
+            <li>
+              <strong>Response</strong>
+              <span>Containment paths, evidence handling, handoff notes.</span>
+            </li>
+            <li>
+              <strong>Analysis</strong>
+              <span>Log review, IOC context, timeline reconstruction.</span>
+            </li>
+            <li>
+              <strong>Hardening</strong>
+              <span>Least privilege, exposure reduction, control checks.</span>
+            </li>
+          </ul>
+        </section>
+
+        <section class="panel tools" id="tools" aria-labelledby="tools-title">
           <div class="panel-head">
             <h2 id="tools-title">Published tools</h2>
             <span class="chip">Public repos</span>
           </div>
           <div class="tool-grid">
-          <a
-            class="tool-card"
-            href="https://github.com/Ashhhh66/Port-Scanner"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <span class="tool-kicker">PS-001 // Python</span>
-            <strong>Port Scanner</strong>
-            <span>
-              TCP connect scanner for authorized hosts. Concurrent probes, common
-              port presets, optional banners, JSON output. No raw sockets.
-            </span>
-            <span class="tool-url">github.com/Ashhhh66/Port-Scanner</span>
-          </a>
-          <a
-            class="tool-card"
-            href="https://github.com/Ashhhh66/Hash-Checker"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <span class="tool-kicker">HC-001 // Python</span>
-            <strong>Hash Checker</strong>
-            <span>
-              File and text digests for integrity checks. SHA-256 by default,
-              optional known-hash compare, JSON output. Local files only.
-            </span>
-            <span class="tool-url">github.com/Ashhhh66/Hash-Checker</span>
-          </a>
+            <a
+              class="tool-card"
+              href="https://github.com/Ashhhh66/Port-Scanner"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <span class="tool-kicker">PS-001 // Python</span>
+              <strong>Port Scanner</strong>
+              <span>
+                TCP connect scanner for authorized hosts. Concurrent probes, common
+                port presets, optional banners, JSON output. No raw sockets.
+              </span>
+              <span class="tool-url">github.com/Ashhhh66/Port-Scanner</span>
+            </a>
+            <a
+              class="tool-card"
+              href="https://github.com/Ashhhh66/Hash-Checker"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <span class="tool-kicker">HC-001 // Python</span>
+              <strong>Hash Checker</strong>
+              <span>
+                File and text digests for integrity checks. SHA-256 by default,
+                optional known-hash compare, JSON output. Local files only.
+              </span>
+              <span class="tool-url">github.com/Ashhhh66/Hash-Checker</span>
+            </a>
           </div>
-        </section>
-
-        <section class="panel products" id="product-66-tool" aria-labelledby="products-title">
-          <div class="panel-head">
-            <h2 id="products-title">Paid tools</h2>
-            <span class="chip idle">Personal license</span>
-          </div>
-          <article class="tool-card product-card">
-            <span class="tool-kicker">66-001 // Windows</span>
-            <strong>66-Tool</strong>
-            <span>
-              Personal privacy hygiene for YOUR Windows PC. Scrub JPEG/PNG/PDF/MP4
-              metadata, shred your own files, check your own leaks, inspect one
-              URL. CMD menu. Not an exploit kit. Not a port scanner.
-            </span>
-            <ul class="product-facts">
-              <li>Windows .exe — buyers do not need Python</li>
-              <li>One-time payment, no subscription</li>
-              <li>Personal-use license: one person, their machines</li>
-              <li>Your files and identifiers only. Destructive actions default No (explicit y).</li>
-              <li>After payment the download starts. Check email if the tab closed.</li>
-            </ul>
-            <p class="note">
-              Your receipt email has a link that always fetches the latest
-              66-Tool (free updates). SmartScreen may warn because the exe is
-              unsigned: More info → Run anyway. No public GitHub download.
-            </p>
-            <div class="product-actions">
-              <p class="product-price">
-                $25 USD
-                <small>One-time</small>
-              </p>
-              <a class="buy-btn" href="https://buy.stripe.com/fZu3cw2eh6CVgtu74scAo00" rel="noopener noreferrer" target="_blank">Buy 66-Tool</a>
-            </div>
-          </article>
         </section>
 
         <section class="panel log" aria-labelledby="log-title">

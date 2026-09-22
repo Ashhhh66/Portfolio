@@ -27,8 +27,9 @@ jobs:
 
       - name: Assemble site
         run: |
-          mkdir -p _site/assets
-          cp index.html 404.html CNAME _site/
+          mkdir -p _site/assets _site/66-tool
+          cp index.html 404.html CNAME sitemap.xml robots.txt _site/
+          cp 66-tool/index.html _site/66-tool/
           cp -R assets/. _site/assets/
           touch _site/.nojekyll
 
