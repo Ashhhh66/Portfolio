@@ -3,183 +3,310 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Ashh66 · Cybersecurity tools, London</title>
+    <title>Ashh66 // Watch Desk</title>
     <meta
       name="description"
-      content="Ashh66 builds defensive cybersecurity tools in London. 66-Tool is a $25 Windows privacy panel. Public work includes a port scanner and hash checker."
+      content="Ashh66 watch desk: defensive tools, alert triage, and 66-Tool — a $25 Windows privacy panel. Handle only."
     />
-    <meta name="theme-color" content="#f3f0e8" />
+    <meta name="theme-color" content="#07090c" />
     <meta name="robots" content="index,follow" />
-    <meta property="og:title" content="Ashh66 · Cybersecurity tools, London" />
+    <meta property="og:title" content="Ashh66 // Watch Desk" />
     <meta
       property="og:description"
-      content="Defensive tools from London. 66-Tool is $25 one-time. Handle only."
+      content="Public defensive watch desk in London. Port Scanner, Hash Checker, and 66-Tool."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://ashh66.dev/" />
     <meta property="og:image" content="https://ashh66.dev/assets/ashh66-mark.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1024" />
+    <meta property="og:image:height" content="1024" />
+    <meta property="og:image:alt" content="Ashh66 watch-desk mark" />
     <meta name="twitter:card" content="summary" />
+    <meta name="twitter:image" content="https://ashh66.dev/assets/ashh66-mark.png" />
     <link rel="canonical" href="https://ashh66.dev/" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="assets/ashh66-mark.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="assets/styles.css?v=10" />
+    <link rel="stylesheet" href="assets/styles.css?v=11" />
   </head>
   <body>
-    <a class="skip" href="#product">Skip to 66-Tool</a>
+    <a class="skip" href="#product-66-tool">Skip to 66-Tool</a>
+    <div class="scanlines" aria-hidden="true"></div>
+    <div class="vignette" aria-hidden="true"></div>
 
-    <header class="site-header">
-      <div class="wrap">
-        <a class="brand" href="./">
-          <img src="assets/ashh66-mark.png" width="32" height="32" alt="" />
-          Ashh66
-        </a>
-        <nav class="nav" aria-label="Primary">
-          <a href="#work">Work</a>
-          <a href="66-tool/">66-Tool</a>
-          <a href="#contact">Contact</a>
-          <a class="btn btn-primary" href="https://buy.stripe.com/fZu3cw2eh6CVgtu74scAo00" rel="noopener noreferrer" target="_blank">Buy 66-Tool</a>
+    <div class="bezel">
+      <header class="mast">
+        <div class="mast-left">
+          <img class="mark-img" src="assets/ashh66-mark.png" width="40" height="40" alt="" />
+          <div>
+            <p class="kicker">Station 01 // Public desk</p>
+            <h1>Ashh66 <span>// Watch Desk</span></h1>
+          </div>
+        </div>
+        <nav class="mast-nav" aria-label="Desk">
+          <a href="#product-66-tool">66-Tool</a>
+          <a href="#tools">Tools</a>
+          <a href="#channels">Contact</a>
         </nav>
-      </div>
-    </header>
-
-    <main>
-      <section class="hero">
-        <div class="wrap">
-          <p class="eyebrow">London · Handle only</p>
-          <h1>Defensive tools, written clearly.</h1>
-          <p class="lede">
-            Ashh66 is a cybersecurity operator in London. The public work is
-            detection, triage, log analysis, and small tools you can actually run.
-          </p>
-          <p class="lede">
-            If a tool is listed here, it is ready. Discord first for contact,
-            then GitHub or email. No legal name on this site.
-          </p>
-          <div class="actions">
-            <a class="btn btn-primary" href="66-tool/">Get 66-Tool</a>
-            <a class="btn btn-ghost" href="#work">See public work</a>
+        <dl class="mast-status">
+          <div>
+            <dt>Operator</dt>
+            <dd>Ashh66</dd>
           </div>
-        </div>
-      </section>
+          <div>
+            <dt>Link</dt>
+            <dd class="live"><span class="led"></span> Online</dd>
+          </div>
+          <div>
+            <dt>London</dt>
+            <dd id="clock-london">--:--:--</dd>
+          </div>
+          <div>
+            <dt>UTC</dt>
+            <dd id="clock-utc">--:--:--</dd>
+          </div>
+        </dl>
+      </header>
 
-      <section class="section" id="product" aria-labelledby="product-title">
-        <div class="wrap">
-          <article class="product-band">
-            <div>
-              <p class="kicker">Featured product</p>
-              <h2 id="product-title">66-Tool</h2>
-              <p class="lede">
-                Personal privacy hygiene for your Windows PC. Scrub JPEG, PNG,
-                PDF, and MP4 metadata, shred your own files, check your own
-                leaks, and inspect one URL. A CMD menu. Buyers get an
-                <code>.exe</code> — no Python.
+      <main class="desk">
+        <section class="panel featured" id="product-66-tool" aria-labelledby="featured-title">
+          <div class="featured-copy">
+            <div class="panel-head">
+              <h2 id="featured-title">Paid tool</h2>
+              <span class="chip idle">66-001 // Live</span>
+            </div>
+            <p class="featured-title">66-Tool</p>
+            <p class="featured-lead">
+              Personal privacy hygiene for your Windows PC. Scrub JPEG, PNG, PDF,
+              and MP4 metadata, shred your own files, check your own leaks, and
+              inspect one URL.
+              <!--
+                Alternatives for the next sentence (pick one, delete the rest):
+                1. A local CMD panel for privacy work on a machine you own.
+                2. Menu-driven CMD tool: metadata, shred, leak check, one URL.
+                3. Runs as a local Windows CMD panel on your own PC.
+              -->
+              A local CMD panel for privacy work on a machine you own.
+            </p>
+            <div class="featured-actions">
+              <p class="price-lock">
+                $25 USD
+                <small>One-time · personal license</small>
               </p>
-              <ul class="feature-list">
-                <li><strong>Your files only</strong> Not an exploit kit. Not a port scanner.</li>
-                <li><strong>One-time license</strong> One person, that person’s machines. Free updates.</li>
-                <li><strong>Download after payment</strong> Stripe checkout, then the zip starts. Email keeps the link.</li>
-              </ul>
+              <a
+                class="buy-btn"
+                href="https://buy.stripe.com/fZu3cw2eh6CVgtu74scAo00"
+                rel="noopener noreferrer"
+                target="_blank"
+                >Buy 66-Tool</a
+              >
+              <a class="ghost-btn" href="66-tool/">What's included</a>
             </div>
-            <aside class="buy-card">
-              <p class="kicker">Personal license</p>
-              <p class="price">$25 <small>USD · one-time</small></p>
-              <a class="btn btn-primary btn-block" href="https://buy.stripe.com/fZu3cw2eh6CVgtu74scAo00" rel="noopener noreferrer" target="_blank">Buy 66-Tool</a>
-              <a class="btn btn-ghost btn-block" href="66-tool/">What’s included</a>
-              <p class="fine">Opens Stripe. No subscription. No public GitHub zip.</p>
-            </aside>
-          </article>
-        </div>
-      </section>
+          </div>
+          <div class="term" aria-hidden="true">
+            <div class="term-bar"><span>66-TOOL v1.0.0</span><span>CMD</span></div>
+            <ol>
+              <li>Scrub JPEG / PNG / PDF / MP4 metadata</li>
+              <li>Shred your own files</li>
+              <li>Check your own leaks</li>
+              <li>Inspect one URL</li>
+            </ol>
+          </div>
+        </section>
 
-      <section class="section" id="work" aria-labelledby="work-title">
-        <div class="wrap">
-          <div class="section-head">
-            <h2 id="work-title">Public work</h2>
-            <p class="fine">Source on GitHub</p>
+        <section class="panel bio" aria-labelledby="bio-title">
+          <div class="panel-head">
+            <h2 id="bio-title">Bio</h2>
+            <span class="chip">Operator brief</span>
           </div>
-          <div class="work-grid">
-            <a class="work-card card" href="https://github.com/Ashhhh66/Port-Scanner" rel="noopener noreferrer" target="_blank">
-              <span class="kicker">Python</span>
-              <strong>Port Scanner</strong>
-              <p>TCP connect scanner for authorized hosts. Concurrent probes, common-port presets, optional banners, JSON. No raw sockets.</p>
-              <span class="fine">github.com/Ashhhh66/Port-Scanner</span>
-            </a>
-            <a class="work-card card" href="https://github.com/Ashhhh66/Hash-Checker" rel="noopener noreferrer" target="_blank">
-              <span class="kicker">Python</span>
-              <strong>Hash Checker</strong>
-              <p>File and text digests for integrity checks. SHA-256 by default, optional known-hash compare, JSON. Local files only.</p>
-              <span class="fine">github.com/Ashhhh66/Hash-Checker</span>
-            </a>
-          </div>
-        </div>
-      </section>
+          <p class="bio-lead">
+            Ashh66 is a London-based cybersecurity operator. This is a public
+            defensive watch desk: detection, alert triage, log analysis, and
+            clean incident notes.
+          </p>
+          <!-- TODO: specialization / focus (blue team, threat hunting, detection engineering). -->
+          <p class="bio-lead bio-todo" hidden data-todo="bio-focus"></p>
+          <!-- TODO: how you got into cybersecurity. -->
+          <p class="bio-lead bio-todo" hidden data-todo="bio-origin"></p>
+          <!-- TODO: optional fourth sentence. -->
+          <p class="note bio-todo" hidden data-todo="bio-extra"></p>
+          <p class="note">
+            If a tool is on this desk, it is ready to use. For contact, Discord
+            first, then GitHub or email.
+          </p>
+        </section>
 
-      <section class="section" id="about" aria-labelledby="about-title">
-        <div class="wrap">
-          <div class="section-head">
-            <h2 id="about-title">About</h2>
-            <p class="fine">Ashh66 · London</p>
+        <section class="panel identity" aria-labelledby="identity-title">
+          <div class="panel-head">
+            <h2 id="identity-title">Operator</h2>
+            <span class="chip">Handle only</span>
           </div>
-          <div class="about-grid">
-            <article class="about-card card">
-              <h3 class="kicker">Focus</h3>
-              <p>Alert triage, log analysis, incident notes, and hardening. Defensive work only. Uncertified claims are left off this page.</p>
-            </article>
-            <article class="about-card card">
-              <h3 class="kicker">How to reach</h3>
-              <p>Discord AshhFX is first. Then GitHub Ashhhh66 or Ashh66.dev@gmail.com. Timezone Europe/London.</p>
-            </article>
+          <dl class="spec">
+            <div>
+              <dt>Callsign</dt>
+              <dd>Ashh66</dd>
+            </div>
+            <div>
+              <dt>Role</dt>
+              <dd>Cybersecurity operator</dd>
+            </div>
+            <div>
+              <dt>Posture</dt>
+              <dd>Defensive / blue-team</dd>
+            </div>
+            <div>
+              <dt>Station</dt>
+              <dd>London</dd>
+            </div>
+            <div>
+              <dt>Clearance shown</dt>
+              <dd>Public</dd>
+            </div>
+            <div>
+              <dt>Legal name</dt>
+              <dd>Not published</dd>
+            </div>
+            <div>
+              <dt>Focus</dt>
+              <!-- TODO: tighten this when you want a sharper label (threat hunting, detection engineering). -->
+              <dd>Detection, triage, log analysis</dd>
+            </div>
+          </dl>
+          <p class="note">
+            This desk publishes under the handle Ashh66. No real name is listed
+            on this site.
+          </p>
+        </section>
+
+        <section class="panel channels" id="channels" aria-labelledby="channels-title">
+          <div class="panel-head">
+            <h2 id="channels-title">Channels</h2>
+            <span class="chip">Contact</span>
           </div>
-          <ul class="tags">
-            <li>Alert triage</li>
-            <li>Log analysis</li>
-            <li>Incident notes</li>
-            <li>Network fundamentals</li>
-            <li>Python tooling</li>
-            <li>File hashing</li>
-            <li>Privacy hygiene</li>
-            <li>Identity basics</li>
+          <p class="note tight">
+            Public contacts are GitHub, Discord, and email. Tools are linked
+            only when they are ready to show.
+          </p>
+          <div class="channel-stack">
+            <a
+              class="github-link"
+              href="https://github.com/Ashhhh66"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <span class="github-link-kicker">Outbound // GitHub</span>
+              <span class="github-link-handle">Ashhhh66</span>
+              <span class="github-link-url">github.com/Ashhhh66</span>
+            </a>
+            <div class="github-link discord-link">
+              <span class="github-link-kicker">Channel // Discord</span>
+              <span class="github-link-handle">AshhFX</span>
+              <span class="github-link-url">Add by username</span>
+            </div>
+            <a class="github-link mail-link" href="mailto:Ashh66.dev@gmail.com">
+              <span class="channel-brand">
+                <img src="assets/mail-mark.svg" alt="" width="28" height="28" />
+                <span>
+                  <span class="github-link-kicker">Inbound // Mail</span>
+                  <span class="github-link-handle">Ashh66.dev@gmail.com</span>
+                  <span class="github-link-url">mailto:Ashh66.dev@gmail.com</span>
+                </span>
+              </span>
+            </a>
+          </div>
+          <ul class="channel-negatives">
+            <li>TZ Europe/London</li>
+            <li>Preferred: Discord AshhFX</li>
+            <li>Mail: Ashh66.dev@gmail.com</li>
           </ul>
-        </div>
-      </section>
+        </section>
 
-      <section class="section" id="contact" aria-labelledby="contact-title">
-        <div class="wrap">
-          <div class="section-head">
-            <h2 id="contact-title">Contact</h2>
+        <section class="panel scope" aria-labelledby="scope-title">
+          <div class="panel-head">
+            <h2 id="scope-title">Watch scope</h2>
+            <span class="chip idle">2 public / 1 paid</span>
           </div>
-          <div class="contact-grid">
-            <a class="contact-card card" href="https://github.com/Ashhhh66" rel="noopener noreferrer" target="_blank">
-              <span class="kicker">GitHub</span>
-              <strong>Ashhhh66</strong>
-              <p>Public repos and issue contact.</p>
-            </a>
-            <div class="contact-card card">
-              <span class="kicker">Discord</span>
-              <strong>AshhFX</strong>
-              <p>Add by username. Preferred channel.</p>
-            </div>
-            <a class="contact-card card" href="mailto:Ashh66.dev@gmail.com">
-              <span class="kicker">Email</span>
-              <strong>Ashh66.dev@gmail.com</strong>
-              <p>Public inbox. Same address on receipts as Reply-To.</p>
-            </a>
-          </div>
-        </div>
-      </section>
-    </main>
+          <ul class="scope-grid">
+            <li>
+              <strong>Detection</strong>
+              <span>Signal vs noise, telemetry hygiene, first-pass triage.</span>
+            </li>
+            <li>
+              <strong>Response</strong>
+              <span>Containment paths, evidence handling, handoff notes.</span>
+            </li>
+            <li>
+              <strong>Analysis</strong>
+              <span>Log review, IOC context, timeline reconstruction.</span>
+            </li>
+            <li>
+              <strong>Hardening</strong>
+              <span>Least privilege, exposure reduction, control checks.</span>
+            </li>
+          </ul>
+        </section>
 
-    <footer class="site-footer">
-      <div class="wrap">
-        <p>Ashh66 · London</p>
-        <p><a href="66-tool/">66-Tool</a> · <a href="mailto:Ashh66.dev@gmail.com">Email</a></p>
-      </div>
-    </footer>
+        <section class="panel tools" id="tools" aria-labelledby="tools-title">
+          <div class="panel-head">
+            <h2 id="tools-title">Published tools</h2>
+            <span class="chip">Public repos</span>
+          </div>
+          <div class="tool-grid" id="tool-grid"></div>
+        </section>
+
+        <!--
+          Engagement log — re-enable when real case entries exist.
+          Uncomment this section. renderLog() in assets/app.js still runs if #log-body is present.
+        <section class="panel log" aria-labelledby="log-title">
+          <div class="panel-head">
+            <h2 id="log-title">Engagement log</h2>
+            <span class="chip" id="log-count">0 records</span>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Opened</th>
+                  <th scope="col">ID</th>
+                  <th scope="col">Severity</th>
+                  <th scope="col">Summary</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody id="log-body"></tbody>
+            </table>
+          </div>
+        </section>
+        -->
+
+        <section class="panel capabilities" aria-labelledby="cap-title">
+          <div class="panel-head">
+            <h2 id="cap-title">Desk capabilities</h2>
+            <span class="chip">Uncertified claims omitted</span>
+          </div>
+          <ul class="caps" id="caps"></ul>
+        </section>
+      </main>
+
+      <footer class="foot">
+        <p>UNCLASSIFIED // PUBLIC WATCH DESK</p>
+        <p>
+          Ashh66 &middot; Discord AshhFX &middot;
+          <a href="mailto:Ashh66.dev@gmail.com">Ashh66.dev@gmail.com</a>
+          &middot;
+          <a href="https://github.com/Ashhhh66" rel="noopener noreferrer" target="_blank"
+            >github.com/Ashhhh66</a
+          >
+        </p>
+      </footer>
+    </div>
+
+    <script src="assets/app.js"></script>
   </body>
 </html>
