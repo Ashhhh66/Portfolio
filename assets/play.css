@@ -250,10 +250,19 @@ input {
   animation: bonk 0.42s cubic-bezier(0.2, 1.4, 0.4, 1);
 }
 
+.hero-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 16px;
+  margin-top: 12px;
+}
+
 .role {
-  margin: 14px 0 0;
+  margin: 0;
   color: var(--muted);
-  font-size: clamp(1.15rem, 2.4vw, 1.4rem);
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
 }
 
 .training {
@@ -264,7 +273,7 @@ input {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  margin-top: 18px;
+  margin-top: 0;
   padding: 11px 14px 11px 16px;
   border: 0;
   border-radius: 999px;
@@ -298,10 +307,16 @@ html[data-theme="light"] .theme-state::after {
   outline-color: #1a0d09;
 }
 
-.stack {
+.board {
   display: grid;
-  gap: 14px;
-  margin-top: 36px;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.notes {
+  display: grid;
+  gap: 12px;
+  align-content: start;
 }
 
 .card {
@@ -532,6 +547,107 @@ body.no-physics .stage {
 @keyframes pill {
   40% {
     transform: scale(1.06) rotate(-2deg);
+  }
+}
+
+@media (min-width: 960px) and (min-height: 640px) {
+  html,
+  body {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .page {
+    display: flex;
+    flex-direction: column;
+    width: min(1120px, calc(100% - 40px));
+    height: 100vh;
+    height: 100dvh;
+    margin: 0 auto;
+    padding: 14px 0 12px;
+    overflow: hidden;
+  }
+
+  .hints {
+    margin-bottom: 8px;
+    font-size: 0.68rem;
+  }
+
+  .hello {
+    font-size: 1.2rem;
+  }
+
+  .wave {
+    width: 46px;
+    height: 46px;
+    font-size: 1.35rem;
+  }
+
+  .name {
+    margin-top: 2px;
+    font-size: clamp(3rem, 5.4vw, 4.4rem);
+  }
+
+  .hero-foot {
+    margin-top: 8px;
+  }
+
+  .board {
+    flex: 1;
+    min-height: 0;
+    grid-template-columns: minmax(300px, 0.86fr) minmax(380px, 1.14fr);
+    gap: 12px;
+    margin-top: 12px;
+  }
+
+  .notes {
+    min-height: 0;
+    align-content: stretch;
+  }
+
+  .card {
+    padding: 14px 16px;
+    border-radius: 22px;
+  }
+
+  .card h2 {
+    margin-bottom: 6px;
+    font-size: 1.55rem;
+  }
+
+  .card p,
+  .else a,
+  .else button {
+    font-size: 0.95rem;
+    line-height: 1.35;
+  }
+
+  .else a,
+  .else button {
+    min-height: 36px;
+    padding: 4px 8px;
+  }
+
+  .thing h3 {
+    font-size: 1.08rem;
+  }
+
+  .thing > p {
+    margin-top: 2px;
+  }
+
+  .thing + .thing {
+    margin-top: 8px;
+    padding-top: 8px;
+  }
+
+  .thing-links {
+    margin-top: 4px;
+  }
+
+  .status {
+    flex: none;
+    margin-top: 12px;
   }
 }
 
