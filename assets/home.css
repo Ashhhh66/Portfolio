@@ -4,6 +4,7 @@
   --line: #262c42;
   --text: #f5f6fa;
   --muted: #9096b0;
+  --dot: #b7c0dc;
   --accent: #ff3d81;
   --accent-2: #00e5ff;
   --display: "Unbounded", "Arial Black", sans-serif;
@@ -19,6 +20,7 @@ html[data-theme="light"] {
   --line: #e4e5f0;
   --text: #161a28;
   --muted: #6b7090;
+  --dot: #6e7694;
   --accent: #e0246b;
   --accent-2: #0099b3;
   color-scheme: light;
@@ -193,7 +195,7 @@ a {
   padding: 18px 18px 14px;
   border: 1px solid var(--line);
   border-radius: 18px;
-  background: color-mix(in srgb, var(--panel) 86%, transparent);
+  background: color-mix(in srgb, var(--panel) 52%, transparent);
 }
 
 .panel h2 {
