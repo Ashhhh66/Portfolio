@@ -104,7 +104,22 @@ a {
   height: 14px;
   border-radius: 50%;
   background: var(--accent-2);
-  box-shadow: inset -5px -2px 0 0 var(--panel);
+  box-shadow: inset -5px -2px 0 0 var(--bg);
+}
+
+html[data-theme="light"] .theme {
+  background: #fff;
+  border-color: #c9ccdc;
+}
+
+html[data-theme="light"] .theme-orb {
+  background: var(--accent);
+  box-shadow:
+    0 0 0 2px #fff,
+    0 -8px 0 -4px var(--accent),
+    0 8px 0 -4px var(--accent),
+    -8px 0 0 -4px var(--accent),
+    8px 0 0 -4px var(--accent);
 }
 
 .frame {
@@ -196,6 +211,10 @@ a {
   border: 1px solid var(--line);
   border-radius: 18px;
   background: color-mix(in srgb, var(--panel) 52%, transparent);
+}
+
+html[data-theme="light"] .panel {
+  background: var(--panel);
 }
 
 .panel h2 {

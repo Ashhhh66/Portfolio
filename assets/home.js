@@ -23,6 +23,7 @@
     if (themeButton) {
       const next = theme === "dark" ? "light" : "dark";
       themeButton.setAttribute("aria-label", `Switch to ${next} theme`);
+      themeButton.setAttribute("aria-pressed", theme === "light" ? "true" : "false");
     }
   };
 
