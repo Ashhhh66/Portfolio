@@ -8,13 +8,7 @@
   // Edit this when you are somewhere else. Shown as "currently in …".
   const currentlyIn = "London";
 
-  // TODO: replace this object with a fetch() call to a Cloudflare Worker endpoint
-  // that returns live/recent Spotify data — see spotify-now-playing worker.
-  const lastPlayed = {
-    title: "Song title",
-    artist: "Artist",
-    url: "",
-  };
+  const nowPlayingUrl = "https://spotify-now-playing.eddieedward160.workers.dev";
 
   const currentTheme = () =>
     document.documentElement.dataset.theme === "light" ? "light" : "dark";
@@ -65,35 +59,71 @@
     }
   }
 
+  const hidePlayed = () => {
+    const host = document.getElementById("played");
+    if (host) host.hidden = true;
+  };
+
+  const textField = (value) => (value == null ? "" : String(value).trim());
+
   const paintLastPlayed = (track) => {
     const host = document.getElementById("played");
-    const body = document.getElementById("played-body");
-    if (!host || !body) return;
-    const title = String(track?.title || "").trim();
-    const artist = String(track?.artist || "").trim();
-    const url = String(track?.url || "").trim();
+    if (!host) return;
+    const title = textField(track.title);
+    const artist = textField(track.artist);
+    const url = textField(track.url);
     const line = [title, artist].filter(Boolean).join(" — ");
+    if (!line) {
+      hidePlayed();
+      return;
+    }
+
+    const bars = host.querySelector(".bars");
+    if (bars) bars.classList.toggle("is-still", track.isPlaying !== true);
+
     const label = document.createElement("span");
     label.className = "played-label";
     label.textContent = "last played";
     const name = document.createElement("span");
     name.className = "played-title";
-    name.textContent = line || "Song title — Artist";
+    name.textContent = line;
     const safeUrl = /^https?:\/\//i.test(url) ? url : "";
+    const node = safeUrl ? document.createElement("a") : document.createElement("span");
     if (safeUrl) {
-      const link = document.createElement("a");
-      link.className = "played-link";
-      link.href = safeUrl;
-      link.target = "_blank";
-      link.rel = "noopener noreferrer";
-      link.append(label, name);
-      body.replaceWith(link);
-      return;
+      node.className = "played-link";
+      node.href = safeUrl;
+      node.target = "_blank";
+      node.rel = "noopener noreferrer";
+    } else {
+      node.className = "played-body";
     }
-    body.replaceChildren(label, name);
+    node.append(label, name);
+    const current = host.querySelector(".played-body, .played-link");
+    if (current) current.replaceWith(node);
+    else host.append(node);
+    host.hidden = false;
   };
 
-  paintLastPlayed(lastPlayed);
+  const loadNowPlaying = async () => {
+    try {
+      const response = await fetch(nowPlayingUrl);
+      if (!response.ok) {
+        hidePlayed();
+        return;
+      }
+      const data = await response.json();
+      if (!data || typeof data !== "object" || Array.isArray(data)) {
+        hidePlayed();
+        return;
+      }
+      paintLastPlayed(data);
+    } catch (_) {
+      hidePlayed();
+    }
+  };
+
+  loadNowPlaying();
+  window.setInterval(loadNowPlaying, 60000);
 
   const copyTextSync = (text) => {
     const area = document.createElement("textarea");

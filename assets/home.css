@@ -307,6 +307,27 @@ a {
   animation-delay: 0.32s;
 }
 
+.bars.is-still i {
+  animation: none;
+  transform: none;
+}
+
+.bars.is-still i:nth-child(1) {
+  height: 6px;
+}
+
+.bars.is-still i:nth-child(2) {
+  height: 12px;
+}
+
+.bars.is-still i:nth-child(3) {
+  height: 8px;
+}
+
+.played[hidden] {
+  display: none;
+}
+
 .played-label,
 .played-title {
   display: block;
