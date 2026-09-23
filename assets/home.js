@@ -270,11 +270,6 @@
     return { width, height, dpr };
   };
 
-  const drawStatic = () => {
-    clearField();
-    drawDots(readColors());
-  };
-
   const pushTarget = (dot, now) => {
     let tx = dot.ox;
     let ty = dot.oy;
@@ -349,15 +344,6 @@
   };
 
   layoutDots();
-  if (reduceMotion) {
-    drawStatic();
-    window.addEventListener("resize", () => {
-      layoutDots();
-      drawStatic();
-    });
-    return;
-  }
-
   window.addEventListener("resize", () => {
     layoutDots();
   });
