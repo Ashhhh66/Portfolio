@@ -3,12 +3,12 @@
   "short_name": "Ashh66",
   "icons": [
     {
-      "src": "/assets/favicon-32.png",
+      "src": "/assets/favicon-32.png?v=6",
       "sizes": "32x32",
       "type": "image/png"
     },
     {
-      "src": "/assets/apple-touch-icon.png",
+      "src": "/assets/apple-touch-icon.png?v=6",
       "sizes": "180x180",
       "type": "image/png"
     }
