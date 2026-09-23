@@ -1,32 +1,34 @@
 :root {
-  --bg: #110e0c;
-  --raise: #1c1714;
-  --ink: #f6f0e8;
-  --muted: #b3a69a;
-  --accent: #ff5a36;
-  --amber: #ffb020;
-  --line: rgba(246, 240, 232, 0.1);
-  --shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+  --bg: #0c0e16;
+  --raise: #161824;
+  --ink: #f3f4fb;
+  --muted: #9aa3bb;
+  --accent: #8d7cff;
+  --amber: #3ee0c5;
+  --on-accent: #14121c;
+  --line: rgba(243, 244, 251, 0.1);
+  --shadow: 0 18px 40px rgba(0, 0, 0, 0.32);
   --glow:
-    radial-gradient(880px 480px at 8% -12%, rgba(255, 90, 54, 0.2), transparent 62%),
-    radial-gradient(640px 420px at 108% 8%, rgba(255, 176, 32, 0.1), transparent 58%);
+    radial-gradient(880px 480px at 8% -12%, rgba(141, 124, 255, 0.28), transparent 62%),
+    radial-gradient(640px 420px at 108% 8%, rgba(62, 224, 197, 0.12), transparent 58%);
   --sans: "Outfit", "Segoe UI", sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, monospace;
   color-scheme: dark;
 }
 
 html[data-theme="light"] {
-  --bg: #f4efe8;
-  --raise: #fffaf4;
-  --ink: #1c1411;
-  --muted: #6d6158;
-  --accent: #ef4d2a;
-  --amber: #d4840a;
-  --line: rgba(28, 20, 17, 0.1);
-  --shadow: 0 16px 36px rgba(90, 48, 24, 0.08);
+  --bg: #f3f4fb;
+  --raise: #ffffff;
+  --ink: #14151f;
+  --muted: #5c657c;
+  --accent: #5b4de0;
+  --amber: #0e9b88;
+  --on-accent: #ffffff;
+  --line: rgba(20, 21, 31, 0.1);
+  --shadow: 0 16px 36px rgba(28, 32, 64, 0.08);
   --glow:
-    radial-gradient(880px 480px at 8% -12%, rgba(255, 90, 54, 0.16), transparent 62%),
-    radial-gradient(640px 420px at 108% 8%, rgba(255, 176, 32, 0.2), transparent 58%);
+    radial-gradient(880px 480px at 8% -12%, rgba(91, 77, 224, 0.14), transparent 62%),
+    radial-gradient(640px 420px at 108% 8%, rgba(14, 155, 136, 0.14), transparent 58%);
   color-scheme: light;
 }
 
@@ -86,7 +88,7 @@ input {
 
 ::selection {
   background: var(--accent);
-  color: #1a0d09;
+  color: var(--on-accent);
 }
 
 .sr-only {
@@ -109,7 +111,7 @@ input {
   padding: 8px 14px;
   border-radius: 999px;
   background: var(--accent);
-  color: #1a0d09;
+  color: var(--on-accent);
   font-weight: 600;
   text-decoration: none;
 }
@@ -153,15 +155,15 @@ input {
 }
 
 .ball[data-tone="0"] {
-  background: radial-gradient(circle at 32% 28%, #ffd4c8, #ff5a36 48%, #b4331c);
+  background: radial-gradient(circle at 32% 28%, #e4dcff, #8d7cff 48%, #4c3bb8);
 }
 
 .ball[data-tone="1"] {
-  background: radial-gradient(circle at 32% 28%, #ffe7b5, #ffb020 50%, #c47a08);
+  background: radial-gradient(circle at 32% 28%, #d9fff6, #3ee0c5 50%, #0e8f7c);
 }
 
 .ball[data-tone="2"] {
-  background: radial-gradient(circle at 32% 28%, #fff, #ffe4d8 45%, #ffb39f);
+  background: radial-gradient(circle at 32% 28%, #fff, #efeaff 45%, #c4b8ff);
 }
 
 .page {
@@ -278,7 +280,7 @@ input {
   border: 0;
   border-radius: 999px;
   background: var(--accent);
-  color: #1a0d09;
+  color: var(--on-accent);
   font-family: var(--mono);
   font-size: 0.75rem;
   cursor: pointer;
@@ -290,8 +292,8 @@ input {
   display: inline-block;
   padding: 3px 8px;
   border-radius: 999px;
-  background: #fff6f1;
-  color: #1a0d09;
+  background: #f4f3ff;
+  color: #14121c;
 }
 
 html[data-theme="light"] .theme-state::after {
@@ -304,7 +306,7 @@ html[data-theme="light"] .theme-state::after {
 
 .theme:focus-visible,
 .back:focus-visible {
-  outline-color: #1a0d09;
+  outline-color: var(--ink);
 }
 
 .board {
@@ -497,7 +499,7 @@ html[data-theme="light"] .theme-state::after {
   padding: 10px 16px;
   border-radius: 999px;
   background: var(--accent);
-  color: #1a0d09;
+  color: var(--on-accent);
   font-weight: 600;
   text-decoration: none;
 }

@@ -8,7 +8,7 @@
   const discordButton = document.getElementById("copy-discord");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  const themeColors = { dark: "#110e0c", light: "#f4efe8" };
+  const themeColors = { dark: "#0c0e16", light: "#f3f4fb" };
 
   // Last played. Edit song, artist, and url here when you want the chip to
   // show something current. Leave song and artist blank to hide it.
