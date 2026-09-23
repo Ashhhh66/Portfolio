@@ -34,12 +34,13 @@ html,
 body {
   height: 100dvh;
   overflow: hidden;
+  background-color: var(--bg);
 }
 
 body {
   margin: 0;
   color: var(--text);
-  background: var(--bg);
+  background-color: transparent;
   font-family: var(--sans);
   font-size: 15.5px;
   line-height: 1.45;
@@ -192,7 +193,7 @@ a {
   padding: 18px 18px 14px;
   border: 1px solid var(--line);
   border-radius: 18px;
-  background: var(--panel);
+  background: color-mix(in srgb, var(--panel) 86%, transparent);
 }
 
 .panel h2 {
@@ -440,8 +441,10 @@ a {
   position: fixed;
   inset: 0;
   z-index: 0;
+  display: block;
   width: 100%;
   height: 100%;
+  background: transparent;
   pointer-events: none;
 }
 
@@ -450,6 +453,7 @@ a {
   z-index: 1;
 }
 
+html.theme-ready,
 html.theme-ready body,
 html.theme-ready .panel,
 html.theme-ready .theme,
@@ -468,85 +472,41 @@ html.theme-ready .status {
     border-color 0.45s ease;
 }
 
-#things .rows a {
+#things .rows a,
+#elsewhere .rows a,
+#elsewhere .rows button {
   transition: transform 0.22s ease, color 0.22s ease;
 }
 
 #things .rows a:hover,
-#things .rows a:focus-visible {
+#things .rows a:focus-visible,
+#elsewhere .rows a:hover,
+#elsewhere .rows a:focus-visible,
+#elsewhere .rows button:hover,
+#elsewhere .rows button:focus-visible {
   transform: translateX(6px);
   color: var(--accent-2);
 }
 
 #things .rows a:hover .tag,
-#things .rows a:focus-visible .tag {
+#things .rows a:focus-visible .tag,
+#elsewhere .rows a:hover .tag,
+#elsewhere .rows a:focus-visible .tag,
+#elsewhere .rows button:hover .tag,
+#elsewhere .rows button:focus-visible .tag {
   color: var(--accent-2);
-}
-
-#else .rows a,
-#else .rows button {
-  align-items: center;
-}
-
-.else-label {
-  position: relative;
-  transition: transform 0.22s ease, color 0.22s ease;
-}
-
-.else-label::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 100%;
-  height: 1px;
-  background: currentColor;
-  transform: scaleX(0);
-  transform-origin: left center;
-  transition: transform 0.25s ease;
-}
-
-.else-icon {
-  color: var(--accent);
-  font-size: 0.9rem;
-  line-height: 1;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-}
-
-.else-meta {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-left: auto;
 }
 
 .toast {
+  margin-left: auto;
   color: var(--accent-2);
   font-family: var(--mono);
   font-size: 0.68rem;
+  font-weight: 500;
 }
 
-#else .rows a:hover .else-label,
-#else .rows button:hover .else-label,
-#else .rows a:focus-visible .else-label,
-#else .rows button:focus-visible .else-label {
-  transform: translateX(6px);
-  color: var(--accent);
-}
-
-#else .rows a:hover .else-label::after,
-#else .rows button:hover .else-label::after,
-#else .rows a:focus-visible .else-label::after,
-#else .rows button:focus-visible .else-label::after {
-  transform: scaleX(1);
-}
-
-#else .rows a:hover .else-icon,
-#else .rows button:hover .else-icon,
-#else .rows a:focus-visible .else-icon,
-#else .rows button:focus-visible .else-icon {
-  opacity: 1;
+.rows button:has(.toast:not([hidden])) .tag {
+  display: none;
 }
 
 .played-link {

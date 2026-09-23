@@ -217,8 +217,7 @@
   };
 
   const layoutDots = () => {
-    const width = window.innerWidth;
-    const height = window.innerHeight;
+    const { width, height } = viewSize();
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     canvas.width = Math.round(width * dpr);
     canvas.height = Math.round(height * dpr);
@@ -246,10 +245,21 @@
     ctx.globalAlpha = 1;
   };
 
-  const drawStatic = () => {
-    const width = window.innerWidth;
-    const height = window.innerHeight;
+  const viewSize = () => ({
+    width: canvas.clientWidth || window.innerWidth,
+    height: canvas.clientHeight || window.innerHeight,
+  });
+
+  const clearField = () => {
+    const { width, height } = viewSize();
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.clearRect(0, 0, width, height);
+    return { width, height, dpr };
+  };
+
+  const drawStatic = () => {
+    clearField();
     drawDots(readColors(), 0.55);
   };
 
@@ -283,8 +293,6 @@
   };
 
   const drawField = (now) => {
-    const width = window.innerWidth;
-    const height = window.innerHeight;
     for (let i = ripples.length - 1; i >= 0; i -= 1) {
       if (now - ripples[i].t > 520) ripples.splice(i, 1);
     }
@@ -297,7 +305,7 @@
       dot.x += dot.vx;
       dot.y += dot.vy;
     }
-    ctx.clearRect(0, 0, width, height);
+    clearField();
     const colors = readColors();
     if (mouse) {
       const near = [];
