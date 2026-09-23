@@ -1,184 +1,186 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="utf-8" />
+    <script>
+      try {
+        var savedTheme = localStorage.getItem("ashh66-theme");
+        if (savedTheme === "light" || savedTheme === "dark") {
+          document.documentElement.setAttribute("data-theme", savedTheme);
+        }
+      } catch (e) {}
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Ashh66 · Cybersecurity tools, London</title>
+    <title>ashh66 · security analyst (in training)</title>
     <meta
       name="description"
-      content="Ashh66 builds defensive cybersecurity tools in London. 66-Tool is a $25 Windows privacy panel. Public work includes a port scanner and hash checker."
+      content="Ashh66 is training as a security analyst. Detection, triage, and the tools built along the way — including 66-Tool."
     />
-    <meta name="theme-color" content="#f3f0e8" />
+    <meta name="theme-color" content="#110e0c" />
     <meta name="robots" content="index,follow" />
-    <meta property="og:title" content="Ashh66 · Cybersecurity tools, London" />
+    <meta property="og:title" content="ashh66 · security analyst (in training)" />
     <meta
       property="og:description"
-      content="Defensive tools from London. 66-Tool is $25 one-time. Handle only."
+      content="Detection, triage, and small defensive tools. Handle only."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://ashh66.dev/" />
-    <meta property="og:image" content="https://ashh66.dev/assets/og-image.png" />
+    <meta property="og:image" content="https://ashh66.dev/assets/og.png" />
     <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Ashh66" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://ashh66.dev/assets/og-image.png" />
+    <meta name="twitter:image" content="https://ashh66.dev/assets/og.png" />
     <link rel="canonical" href="https://ashh66.dev/" />
-    <link rel="icon" type="image/svg+xml" href="/assets/favicon-hex.svg" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" href="/assets/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
     <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
     <link rel="manifest" href="assets/site.webmanifest" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="assets/styles.css?v=14" />
+    <link rel="stylesheet" href="assets/play.css?v=3" />
   </head>
   <body>
-    <a class="skip" href="#product">Skip to 66-Tool</a>
+    <a class="skip" href="#now">Skip to content</a>
+    <div class="stage" id="stage" aria-hidden="true"></div>
+    <p class="sr-only" id="live" aria-live="polite"></p>
 
-    <header class="site-header">
-      <div class="wrap">
-        <a class="brand" href="./">
-          <img class="brand-mark" src="/assets/logo-bracket.svg" height="32" alt="" />
-          Ashh66
-        </a>
-        <nav class="nav" aria-label="Primary">
-          <a href="#work">Work</a>
-          <a href="66-tool/">66-Tool</a>
-          <a href="#contact">Contact</a>
-          <a class="btn btn-primary" href="https://buy.stripe.com/fZu3cw2eh6CVgtu74scAo00" rel="noopener noreferrer" target="_blank">Buy 66-Tool</a>
-        </nav>
-      </div>
-    </header>
+    <main class="page">
+      <p class="hints" data-collider="card">
+        <span>drag anywhere and let go</span>
+        <span>hit my name with a ball</span>
+        <span>flip the theme with a ball</span>
+      </p>
 
-    <main>
-      <section class="hero">
-        <div class="wrap">
-          <p class="eyebrow">London · Handle only</p>
-          <h1>Defensive tools, written clearly.</h1>
-          <p class="lede">
-            Ashh66 is a cybersecurity operator in London. The public work is
-            detection, triage, log analysis, and small tools you can actually run.
-          </p>
-          <!-- TODO: specialization / focus (blue team, threat hunting, detection engineering). -->
-          <p class="lede bio-todo" hidden data-todo="bio-focus"></p>
-          <!-- TODO: how you got into cybersecurity. -->
-          <p class="lede bio-todo" hidden data-todo="bio-origin"></p>
-          <p class="lede">
-            If a tool is listed here, it is ready. Discord first for contact,
-            then GitHub or email. No legal name on this site.
-          </p>
-          <div class="actions">
-            <a class="btn btn-primary" href="66-tool/">Get 66-Tool</a>
-            <a class="btn btn-ghost" href="#work">See public work</a>
-          </div>
+      <header class="hero">
+        <div class="greet">
+          <p class="hello" data-collider="card">hey, i'm</p>
+          <button class="wave" id="wave" type="button" data-collider="wave" aria-label="Wave hello">
+            <span class="wave-hand" aria-hidden="true">👋</span>
+          </button>
         </div>
-      </section>
+        <h1 class="name">
+          <span class="sr-only">ashh66</span>
+          <span class="letters" aria-hidden="true">
+            <span class="letter" data-collider="letter">a</span><span class="letter" data-collider="letter">s</span><span class="letter" data-collider="letter">h</span><span class="letter" data-collider="letter">h</span><span class="letter num" data-collider="letter">6</span><span class="letter num" data-collider="letter">6</span>
+          </span>
+        </h1>
+        <p class="role" data-collider="card">
+          security analyst <span class="training">(in training)</span>
+        </p>
+        <button
+          class="theme"
+          id="theme-toggle"
+          type="button"
+          data-collider="theme"
+          aria-label="Flip the theme. You can also hit this with a ball."
+        >
+          <span>theme</span>
+          <span class="theme-state"></span>
+        </button>
+      </header>
 
-      <section class="section" id="product" aria-labelledby="product-title">
-        <div class="wrap">
-          <article class="product-band">
-            <div>
-              <p class="kicker">Featured product</p>
-              <h2 id="product-title">66-Tool</h2>
-              <p class="lede">
-                Personal privacy hygiene for your Windows PC. Scrub JPEG, PNG,
-                PDF, and MP4 metadata, shred your own files, check your own
-                leaks, and inspect one URL. Buyers get an
-                <code>.exe</code> — no Python.
-                <!--
-                  Alternatives:
-                  1. A local CMD panel for privacy work on a machine you own.
-                  2. Menu-driven CMD tool: metadata, shred, leak check, one URL.
-                  3. Runs as a local Windows CMD panel on your own PC.
-                -->
-                A local CMD panel for privacy work on a machine you own.
-              </p>
-              <ul class="feature-list">
-                <li><strong>Your files only</strong> Local privacy work on a machine you own.</li>
-                <li><strong>One-time license</strong> One person, that person’s machines. Free updates.</li>
-                <li><strong>Download after payment</strong> Stripe checkout, then the zip starts. Email keeps the link.</li>
-              </ul>
+      <div class="stack">
+        <section class="card" id="now" data-collider="card" aria-labelledby="now-title">
+          <h2 id="now-title">now</h2>
+          <p>
+            building toward a security analyst role — detection, triage, and reading logs until the patterns make sense
+          </p>
+        </section>
+
+        <section class="card" id="previously" data-collider="card" aria-labelledby="previously-title">
+          <h2 id="previously-title">previously</h2>
+          <p>self-taught, backed by formal coursework</p>
+        </section>
+
+        <section class="card" id="elsewhere" data-collider="card" aria-labelledby="elsewhere-title">
+          <h2 id="elsewhere-title">elsewhere</h2>
+          <ul class="else">
+            <li>
+              <a href="https://github.com/Ashhhh66" rel="noopener noreferrer" target="_blank">
+                GitHub
+                <span class="mono">Ashhhh66</span>
+              </a>
+            </li>
+            <li>
+              <button type="button" id="copy-discord" aria-label="Copy Discord username AshhFX">
+                Discord
+                <span class="mono" data-handle>AshhFX</span>
+              </button>
+            </li>
+            <li>
+              <a href="mailto:Ashh66.dev@gmail.com">
+                Email
+                <span class="mono">Ashh66.dev@gmail.com</span>
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <section class="card" id="things" data-collider="card" aria-labelledby="things-title">
+          <h2 id="things-title">things</h2>
+
+          <article class="thing">
+            <div class="thing-head">
+              <h3><a href="66-tool/">66-Tool</a></h3>
+              <span class="price">$25</span>
             </div>
-            <aside class="buy-card">
-              <p class="kicker">Personal license</p>
-              <p class="price">$25 <small>USD · one-time</small></p>
-              <a class="btn btn-primary btn-block" href="https://buy.stripe.com/fZu3cw2eh6CVgtu74scAo00" rel="noopener noreferrer" target="_blank">Buy 66-Tool</a>
-              <a class="btn btn-ghost btn-block" href="66-tool/">What’s included</a>
-              <p class="fine">Opens Stripe. No subscription. No public GitHub zip.</p>
-            </aside>
+            <p>Windows privacy hygiene panel</p>
+            <p class="thing-links">
+              <a href="66-tool/">what's included</a>
+              <a href="https://buy.stripe.com/fZu3cw2eh6CVgtu74scAo00" rel="noopener noreferrer" target="_blank">buy</a>
+            </p>
           </article>
-        </div>
-      </section>
 
-      <section class="section" id="work" aria-labelledby="work-title">
-        <div class="wrap">
-          <div class="section-head">
-            <h2 id="work-title">Public work</h2>
-            <p class="fine">Source on GitHub</p>
-          </div>
-          <div class="work-grid" id="work-grid"></div>
-        </div>
-      </section>
-
-      <section class="section" id="about" aria-labelledby="about-title">
-        <div class="wrap">
-          <div class="section-head">
-            <h2 id="about-title">About</h2>
-            <p class="fine">Ashh66 · London · Legal name not published</p>
-          </div>
-          <div class="about-grid">
-            <article class="about-card card">
-              <h3 class="kicker">Focus</h3>
-              <!-- TODO: tighten this label if you want (threat hunting, detection engineering). -->
-              <p>Detection, triage, log analysis. Defensive work only. Uncertified claims are left off this page.</p>
-            </article>
-            <article class="about-card card">
-              <h3 class="kicker">How to reach</h3>
-              <p>Discord AshhFX is first. Then GitHub Ashhhh66 or Ashh66.dev@gmail.com. Timezone Europe/London.</p>
-            </article>
-          </div>
-          <ul class="tags" id="caps"></ul>
-        </div>
-      </section>
-
-      <section class="section" id="contact" aria-labelledby="contact-title">
-        <div class="wrap">
-          <div class="section-head">
-            <h2 id="contact-title">Contact</h2>
-          </div>
-          <div class="contact-grid">
-            <a class="contact-card card" href="https://github.com/Ashhhh66" rel="noopener noreferrer" target="_blank">
-              <span class="kicker">GitHub</span>
-              <strong>Ashhhh66</strong>
-              <p>Public repos and issue contact.</p>
-            </a>
-            <div class="contact-card card">
-              <span class="kicker">Discord</span>
-              <strong>AshhFX</strong>
-              <p>Add by username. Preferred channel.</p>
+          <article class="thing">
+            <div class="thing-head">
+              <h3>
+                <a href="https://github.com/Ashhhh66/Port-Scanner" rel="noopener noreferrer" target="_blank">Port Scanner</a>
+              </h3>
             </div>
-            <a class="contact-card card" href="mailto:Ashh66.dev@gmail.com">
-              <span class="kicker">Email</span>
-              <strong>Ashh66.dev@gmail.com</strong>
-              <p>Public inbox. Same address on receipts as Reply-To.</p>
-            </a>
-          </div>
-        </div>
-      </section>
+            <p class="repo">
+              <a href="https://github.com/Ashhhh66/Port-Scanner" rel="noopener noreferrer" target="_blank">github.com/Ashhhh66/Port-Scanner</a>
+            </p>
+          </article>
+
+          <article class="thing">
+            <div class="thing-head">
+              <h3>
+                <a href="https://github.com/Ashhhh66/Hash-Checker" rel="noopener noreferrer" target="_blank">Hash Checker</a>
+              </h3>
+            </div>
+            <p class="repo">
+              <a href="https://github.com/Ashhhh66/Hash-Checker" rel="noopener noreferrer" target="_blank">github.com/Ashhhh66/Hash-Checker</a>
+            </p>
+          </article>
+
+          <article class="thing">
+            <div class="thing-head">
+              <h3>
+                <a href="https://github.com/Ashhhh66/66-Harden" rel="noopener noreferrer" target="_blank">66-Harden</a>
+              </h3>
+              <span class="badge">in development</span>
+            </div>
+            <p class="repo">
+              <a href="https://github.com/Ashhhh66/66-Harden" rel="noopener noreferrer" target="_blank">github.com/Ashhhh66/66-Harden</a>
+            </p>
+          </article>
+        </section>
+
+        <footer class="status" data-collider="card">
+          <p class="status-chip" id="visits" title="Counted in this browser only. Not a global total.">
+            this browser · —
+          </p>
+          <p class="status-chip" id="clock">currently in · —</p>
+          <p class="status-chip" id="listening" hidden>listening · —</p>
+        </footer>
+      </div>
     </main>
 
-    <footer class="site-footer">
-      <div class="wrap">
-        <p>Ashh66 · London</p>
-        <p><a href="66-tool/">66-Tool</a> · <a href="mailto:Ashh66.dev@gmail.com">Email</a></p>
-      </div>
-    </footer>
-    <script src="assets/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js" defer></script>
+    <script src="assets/play.js?v=4" defer></script>
   </body>
 </html>
