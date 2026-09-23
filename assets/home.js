@@ -211,16 +211,14 @@
   const readColors = () => {
     const style = getComputedStyle(document.documentElement);
     return {
-      dot: style.getPropertyValue("--muted").trim() || "#9096b0",
+      bg: style.getPropertyValue("--bg").trim() || "#0b0d17",
+      dot: style.getPropertyValue("--dot").trim() || "#b7c0dc",
       line: style.getPropertyValue("--accent-2").trim() || "#00e5ff",
     };
   };
 
   const layoutDots = () => {
-    const { width, height } = viewSize();
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    canvas.width = Math.round(width * dpr);
-    canvas.height = Math.round(height * dpr);
+    const { width, height, dpr } = fitCanvas();
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     dots.length = 0;
     const cols = Math.ceil(width / spacing) + 1;
@@ -234,33 +232,47 @@
     }
   };
 
-  const drawDots = (colors, alpha) => {
+  const drawDots = (colors) => {
     ctx.fillStyle = colors.dot;
-    ctx.globalAlpha = alpha;
+    ctx.globalAlpha = 1;
     for (const dot of dots) {
       ctx.beginPath();
-      ctx.arc(dot.x, dot.y, 1.6, 0, Math.PI * 2);
+      ctx.arc(dot.x, dot.y, 2.1, 0, Math.PI * 2);
       ctx.fill();
     }
-    ctx.globalAlpha = 1;
   };
 
   const viewSize = () => ({
-    width: canvas.clientWidth || window.innerWidth,
-    height: canvas.clientHeight || window.innerHeight,
+    width: window.innerWidth,
+    height: window.innerHeight,
   });
 
-  const clearField = () => {
+  const fitCanvas = () => {
     const { width, height } = viewSize();
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.style.width = `${width}px`;
+    canvas.style.height = `${height}px`;
+    const bitmapWidth = Math.max(1, Math.round(width * dpr));
+    const bitmapHeight = Math.max(1, Math.round(height * dpr));
+    if (canvas.width !== bitmapWidth || canvas.height !== bitmapHeight) {
+      canvas.width = bitmapWidth;
+      canvas.height = bitmapHeight;
+    }
+    return { width, height, dpr };
+  };
+
+  const clearField = () => {
+    const { width, height, dpr } = fitCanvas();
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    ctx.clearRect(0, 0, width, height);
+    ctx.globalAlpha = 1;
+    ctx.fillStyle = readColors().bg;
+    ctx.fillRect(0, 0, width, height);
     return { width, height, dpr };
   };
 
   const drawStatic = () => {
     clearField();
-    drawDots(readColors(), 0.55);
+    drawDots(readColors());
   };
 
   const pushTarget = (dot, now) => {
@@ -328,7 +340,7 @@
       }
       ctx.globalAlpha = 1;
     }
-    drawDots(colors, 0.8);
+    drawDots(colors);
   };
 
   const tick = (now) => {
