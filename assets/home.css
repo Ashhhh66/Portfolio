@@ -244,7 +244,8 @@ html[data-theme="light"] .panel {
 }
 
 .rows a,
-.rows button {
+.rows button,
+.rows .row {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
@@ -260,8 +261,13 @@ html[data-theme="light"] .panel {
 }
 
 .rows li:last-child a,
-.rows li:last-child button {
+.rows li:last-child button,
+.rows li:last-child .row {
   padding-bottom: 2px;
+}
+
+.rows .row {
+  cursor: default;
 }
 
 .tag {
@@ -419,7 +425,8 @@ html[data-theme="light"] .panel {
   }
 
   .rows a,
-  .rows button {
+  .rows button,
+  .rows .row {
     padding: 6px 0;
   }
 
