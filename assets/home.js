@@ -3,7 +3,7 @@
   const nameEl = document.querySelector(".name");
   const live = document.getElementById("live");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const themeColors = { dark: "#0B0D17", light: "#FAFAFC" };
+  const themeColors = { dark: "#080808", light: "#F3F1ED" };
 
   // Edit this when you are somewhere else. Shown as "currently in …".
   const currentlyIn = "London";
@@ -37,7 +37,7 @@
   const where = document.getElementById("where");
   if (where) {
     const place = String(currentlyIn || "").trim();
-    where.textContent = place ? `currently in ${place}` : "currently in";
+    where.textContent = place || "—";
   }
 
   const visits = document.getElementById("visits");
@@ -203,7 +203,7 @@
   const canvas = document.getElementById("field");
   if (!canvas) return;
   const ctx = canvas.getContext("2d");
-  const spacing = 46;
+  const spacing = 28;
   const dots = [];
   const ripples = [];
   let mouse = null;
@@ -238,7 +238,7 @@
     ctx.globalAlpha = 1;
     for (const dot of dots) {
       ctx.beginPath();
-      ctx.arc(dot.x, dot.y, 2.1, 0, Math.PI * 2);
+      ctx.arc(dot.x, dot.y, 1.15, 0, Math.PI * 2);
       ctx.fill();
     }
   };

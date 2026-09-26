@@ -8,13 +8,13 @@
       name="description"
       content="Ashh66 is a software engineer in London, security-minded. Building mobile and desktop apps with TypeScript, React Native and Rust."
     />
-    <meta name="theme-color" content="#0B0D17" />
+    <meta name="theme-color" content="#080808" />
     <script>
       try {
         if (localStorage.getItem("ashh66-theme") === "light") {
           document.documentElement.dataset.theme = "light";
           var themeMeta = document.querySelector('meta[name="theme-color"]');
-          if (themeMeta) themeMeta.setAttribute("content", "#FAFAFC");
+          if (themeMeta) themeMeta.setAttribute("content", "#F3F1ED");
         }
       } catch (e) {}
     </script>
@@ -42,10 +42,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,640&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Unbounded:wght@800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="assets/home.css?v=9" />
+    <link rel="stylesheet" href="assets/home.css?v=10" />
   </head>
   <body>
     <canvas class="field" id="field" aria-hidden="true"></canvas>
@@ -56,90 +56,68 @@
 
     <div class="frame">
       <header class="hero">
-        <p class="hello">
-          <span class="wave" aria-hidden="true">👋</span>
-          hey, i'm
-        </p>
+        <p class="hello">hey, i'm</p>
         <h1 class="name">ashh66</h1>
         <p class="role">software engineer</p>
-        <p class="lede">
-          building mobile and desktop apps in TypeScript, React Native and Rust. security-minded, from a background in cybersecurity.
-        </p>
       </header>
 
-      <div class="board">
-        <div class="pair">
-          <section class="panel" id="now" aria-labelledby="now-title">
-            <h2 id="now-title">now</h2>
-            <p class="kicker">shipping products</p>
-            <p>design, code, and release</p>
-          </section>
-          <section class="panel" id="previously" aria-labelledby="previously-title">
-            <h2 id="previously-title">previously</h2>
-            <p class="kicker">security analyst</p>
-            <p>then software, full time</p>
-          </section>
-        </div>
+      <section class="block" id="now" aria-labelledby="now-title">
+        <h2 id="now-title">now</h2>
+        <p class="line">shipping products</p>
+        <p class="line muted">mobile and desktop apps</p>
+      </section>
 
-        <div class="pair">
-          <section class="panel" id="things" aria-labelledby="things-title">
-            <h2 id="things-title">things</h2>
-            <ul class="rows">
-              <li>
-                <div class="row">
-                  <span>Ledgio</span>
-                  <span class="tag tag-hot">in progress</span>
-                </div>
-              </li>
-              <li>
-                <div class="row">
-                  <span>Password Manager</span>
-                  <span class="tag tag-hot">in progress</span>
-                </div>
-              </li>
-            </ul>
-          </section>
+      <section class="block" id="previously" aria-labelledby="previously-title">
+        <h2 id="previously-title">previously</h2>
+        <p class="line">security analyst</p>
+        <p class="line muted">cybersecurity, then software</p>
+      </section>
 
-          <section class="panel" id="elsewhere" aria-labelledby="elsewhere-title">
-            <h2 id="elsewhere-title">elsewhere</h2>
-            <ul class="rows">
-              <li>
-                <a href="https://github.com/Ashhhh66" rel="noopener noreferrer" target="_blank">
-                  <span>GitHub</span>
-                  <span class="tag">Ashhhh66</span>
-                </a>
-              </li>
-              <li>
-                <a href="https://discord.com/users/815568346812645409" rel="noopener noreferrer" target="_blank">
-                  <span>Discord</span>
-                  <span class="tag">profile</span>
-                </a>
-              </li>
-              <li>
-                <button type="button" data-copy="Ashh66.dev@gmail.com" aria-label="Copy email address">
-                  <span>Email</span>
-                  <span class="tag">Ashh66.dev@gmail.com</span>
-                  <span class="toast" hidden>copied</span>
-                </button>
-              </li>
-            </ul>
-          </section>
-        </div>
-      </div>
-
-      <footer class="status" aria-label="Status">
-        <p id="where">currently in London</p>
-        <p>visits (30d) <span class="count" id="visits">—</span></p>
-        <p class="played" id="played" hidden>
-          <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>
-          <span class="played-body" id="played-body">
-            <span class="played-label">last played</span>
-            <span class="played-title">Song title — Artist</span>
-          </span>
+      <section class="block" id="elsewhere" aria-labelledby="elsewhere-title">
+        <h2 id="elsewhere-title">elsewhere</h2>
+        <p class="links">
+          <a href="https://github.com/Ashhhh66" rel="noopener noreferrer" target="_blank">github<span class="arrow" aria-hidden="true">↗</span></a>
+          <a href="https://discord.com/users/815568346812645409" rel="noopener noreferrer" target="_blank">discord<span class="arrow" aria-hidden="true">↗</span></a>
+          <button type="button" data-copy="Ashh66.dev@gmail.com" aria-label="Copy email address">
+            email
+            <span class="toast" hidden>copied</span>
+          </button>
         </p>
+      </section>
+
+      <section class="block" id="things" aria-labelledby="things-title">
+        <h2 id="things-title">things</h2>
+        <ul class="things">
+          <li>
+            <span class="thing-name">ledgio</span>
+            <span class="thing-note">trade journal, in progress</span>
+          </li>
+          <li>
+            <span class="thing-name">password manager</span>
+            <span class="thing-note">local-first desktop app, in progress</span>
+          </li>
+        </ul>
+      </section>
+
+      <footer class="foot" aria-label="Status">
+        <div class="foot-side">
+          <p class="played" id="played" hidden>
+            <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="played-body">
+              <span class="played-label">last played</span>
+              <span class="played-title">Song title — Artist</span>
+            </span>
+          </p>
+          <p class="foot-label">currently in</p>
+          <p id="where">London</p>
+        </div>
+        <div class="foot-side foot-end">
+          <p class="foot-label">visits (30d)</p>
+          <p class="count" id="visits">—</p>
+        </div>
       </footer>
     </div>
     <p id="live" class="sr-only" aria-live="polite"></p>
-    <script src="assets/home.js?v=7"></script>
+    <script src="assets/home.js?v=8"></script>
   </body>
 </html>
