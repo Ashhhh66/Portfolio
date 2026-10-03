@@ -237,6 +237,18 @@ html[data-theme="light"] .theme-orb {
 
 .thing-name {
   color: var(--text);
+  text-decoration: none;
+}
+
+a.thing-name {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+a.thing-name:hover,
+a.thing-name:focus-visible {
+  color: var(--text);
 }
 
 .foot {
